@@ -11,9 +11,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private bool fasingRight;
 
+    private Animator animator;
+
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
@@ -27,6 +30,15 @@ public class PlayerController : MonoBehaviour
         else if (fasingRight == true && moveInput < 0)
         {
             Flip();
+        }
+
+        if(moveInput == 0)
+        {
+            animator.SetBool("isRunning", false);
+        }
+        else
+        {
+            animator.SetBool("isRunning", true);
         }
     }
 
