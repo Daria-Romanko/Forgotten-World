@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Data;
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
@@ -26,17 +27,15 @@ public class Inventory : MonoBehaviour
     public RectTransform movingObject;
     public Vector3 offset;
 
+    public GameObject background;
+
     public void Start()
     {
         if (items.Count == 0)
         {
             AddGraphics();
         }
-
-        for(int i=0;i<MaxCount;i++)//тест заполнить рандомные €чейки
-        {
-            AddItem(i, data.items[Random.Range(0, data.items.Count)], Random.Range(1, 99));
-        }
+ 
         UpdateInventory();
     }
 
@@ -46,8 +45,52 @@ public class Inventory : MonoBehaviour
         {
             MoveOvject();
         }
+
+        if(Input.GetKeyUp(KeyCode.I)) 
+        { 
+            background.SetActive(!background.activeSelf);
+            if (background.activeSelf)
+            {
+                UpdateInventory();
+            }
+        }
     }
 
+    public void SearchForSameItem(Item item, int count)
+    {
+        for(int i =0; i < MaxCount; i++)
+        {
+            if (items[i].id == item.id)
+            {
+                if (items[0].count < 100)
+                {
+                    items[i].count += count;
+                    if (items[i].count > 100)
+                    {
+                        count = items[i].count - 100;
+                        items[i].count = 50;
+                    }
+                    else
+                    {
+                        count = 0;
+                        i = MaxCount;
+                    }
+                }
+            }
+        }
+
+        if(count > 0)
+        {
+            for(int i = 0; i < MaxCount; i++)
+            {
+                if (items[0].id == 0)
+                {
+                    AddItem(i,item,count);
+                    i = MaxCount;
+                }
+            }
+        }
+    }
 
     public void AddItem(int id,Item item,int count)
     {
@@ -57,14 +100,13 @@ public class Inventory : MonoBehaviour
 
         if(count>1&&item.id!=0)
         {
-            items[id].ItemGameObj.GetComponentInChildren<Text>().text = count.ToString();
+            items[id].ItemGameObj.GetComponentInChildren<TMP_Text>().text = count.ToString();
         }
         else
         {
-            items[id].ItemGameObj.GetComponentInChildren<Text>().text = "";
+            items[id].ItemGameObj.GetComponentInChildren<TMP_Text>().text = "";
         }
     }
-
 
     public void AddInventoryItem(int id, ItemInventory invItem)
     {
@@ -74,11 +116,11 @@ public class Inventory : MonoBehaviour
 
         if (invItem.count > 1 && invItem.id != 0)
         {
-            items[id].ItemGameObj.GetComponentInChildren<Text>().text = invItem.count.ToString();
+            items[id].ItemGameObj.GetComponentInChildren<TMP_Text>().text = invItem.count.ToString();
         }
         else
         {
-            items[id].ItemGameObj.GetComponentInChildren<Text>().text = "";
+            items[id].ItemGameObj.GetComponentInChildren<TMP_Text>().text = "";
         }
     }
 
@@ -112,11 +154,11 @@ public class Inventory : MonoBehaviour
         {
             if (items[i].id != 0 && items[i].count > 1)
             {
-                items[i].ItemGameObj.GetComponentInChildren<Text>().text = items[i].count.ToString();
+                items[i].ItemGameObj.GetComponentInChildren<TMP_Text>().text = items[i].count.ToString();
             }
             else
             {
-                items[i].ItemGameObj.GetComponentInChildren<Text>().text = "";
+                items[i].ItemGameObj.GetComponentInChildren<TMP_Text>().text = "";
             }
 
             items[i].ItemGameObj.GetComponent<Image>().sprite = data.items[items[i].id].img;
@@ -136,9 +178,28 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            AddInventoryItem(currentID, items[int.Parse(es.currentSelectedGameObject.name)]);
+            ItemInventory II = items[int.Parse(es.currentSelectedGameObject.name)];
+            if (currentItem.id != II.id)
+            {
+                AddInventoryItem(currentID, II);
 
-            AddInventoryItem(int.Parse(es.currentSelectedGameObject.name),currentItem);
+                AddInventoryItem(int.Parse(es.currentSelectedGameObject.name), currentItem);
+            }
+            else
+            {
+                if(II.count + currentItem.count < 100) 
+                {
+                    II.count += currentItem.count;
+                }
+                else
+                {
+                    AddItem(currentID, data.items[II.id],II.count + currentItem.count - 100);
+
+                    II.count = 100;
+                }
+
+                II.ItemGameObj.GetComponentInChildren<TMP_Text>().text = II.count.ToString();
+            }
             currentID = -1;
 
             movingObject.gameObject.SetActive(false);
@@ -171,6 +232,7 @@ public class ItemInventory
 {
     public int id;
     public GameObject ItemGameObj;
-    
+
     public int count;
+
 }
