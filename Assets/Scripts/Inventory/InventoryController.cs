@@ -107,6 +107,14 @@ namespace Inventory2
                     inventoryUI.Hide();
                 }
             }
+
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                if(inventoryUI.isActiveAndEnabled == true)
+                {
+                    inventoryUI.Hide();
+                }
+            }
         }
 
 
