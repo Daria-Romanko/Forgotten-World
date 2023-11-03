@@ -18,7 +18,7 @@ public class PickUpSystem : MonoBehaviour
         if (item != null)
         {
             panel.SetActive(true);
-            panel.GetComponentInChildren<TMP_Text>().text = "Нажмите Е чтобы поднять\n" + item.InventoryItem.Name;
+            panel.GetComponentInChildren<TMP_Text>().text = item.InventoryItem.Name;
         }
     }
 
