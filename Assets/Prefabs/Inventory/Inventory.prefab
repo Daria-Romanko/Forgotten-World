@@ -94,8 +94,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 150, y: 150}
+  m_CellSize: {x: 100, y: 100}
   m_Spacing: {x: 20, y: 20}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: 350
+  m_PreferredWidth: 300
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
@@ -866,7 +866,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1320, y: 680}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2665827694289814427
 CanvasRenderer:
@@ -947,12 +947,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 2754191078615346852, guid: 9b07208ace9f4dd4b9f211da70637e6b, type: 3}
   contentPanel: {fileID: 2665827692848792353}
   itemDescription: {fileID: 7735550135737257432}
-  image: {fileID: 21300000, guid: d1aeeccd66f40084a9b1fd001c83125a, type: 3}
-  quantity: 1
-  title: "\u041A\u043B\u044E\u0447"
-  description: "\u041D\u0430\u0448\u0435\u043B \u0435\u0433\u043E \u0432 \u043F\u043E\u0447\u0442\u043E\u0432\u043E\u043C
-    \u044F\u0449\u0438\u043A\u0435, \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E,
-    \u0447\u0442\u043E \u043E\u043D \u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442?"
+  mouseFollower: {fileID: 0}
 --- !u!1 &2665827694484794980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1043,7 @@ MonoBehaviour:
   m_MinHeight: -1
   m_PreferredWidth: -1
   m_PreferredHeight: -1
-  m_FlexibleWidth: 200
+  m_FlexibleWidth: 300
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
 --- !u!1 &3482815000946848972
@@ -1089,7 +1084,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5748121886448272262
 CanvasRenderer:
@@ -1247,7 +1242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: 200
+  m_MinHeight: 125
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
@@ -1549,8 +1544,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

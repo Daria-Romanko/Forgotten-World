@@ -53,7 +53,7 @@ namespace Inventory2
             inventoryUI.OnDescriptionRequested += HandleDescriptionRequest;
             inventoryUI.OnSwapItems += HandleSwapItems;
             inventoryUI.OnStartDragging += HandleDragging;
-            inventoryUI.OnItemActionRequested += HandleItemActionRequest;
+            //inventoryUI.OnItemActionRequested += HandleItemActionRequest;
         }
 
         private void HandleItemActionRequest(int itemIndex)
@@ -103,6 +103,14 @@ namespace Inventory2
                     }
                 }
                 else
+                {
+                    inventoryUI.Hide();
+                }
+            }
+
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                if(inventoryUI.isActiveAndEnabled == true)
                 {
                     inventoryUI.Hide();
                 }
