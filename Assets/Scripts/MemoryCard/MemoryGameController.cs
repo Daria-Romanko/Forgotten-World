@@ -31,8 +31,10 @@ public class MemoryGameController : MonoBehaviour
 
     public InventorySO inventory;
 
-    private void Start()
+    public void ShowGamePanel()
     {
+        gamePanel.gameObject.SetActive(true);
+
         GetButtons();
         AddListeners();
         AddGameCards();
