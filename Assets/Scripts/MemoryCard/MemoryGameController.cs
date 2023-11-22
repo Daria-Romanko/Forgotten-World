@@ -6,9 +6,12 @@ using UnityEngine.UI;
 
 public class MemoryGameController : MonoBehaviour
 {
+    private PlayerController playerController;
+
+    private GameObject player;
+
     public GameObject gamePanel;
 
-    [SerializeField]
     private Sprite backgroundImage;
 
     public Sprite[] cards;
@@ -31,6 +34,11 @@ public class MemoryGameController : MonoBehaviour
 
     public InventorySO inventory;
 
+    private void Start()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+    }
+
     public void ShowGamePanel()
     {
         gamePanel.gameObject.SetActive(true);
@@ -41,6 +49,15 @@ public class MemoryGameController : MonoBehaviour
         Shuffle(gameCards);
 
         gameGuesses = gameCards.Count / 2;
+
+        StartCoroutine(BlockMovement());
+    }
+
+
+    IEnumerator BlockMovement()
+    {
+        yield return new WaitForSeconds(1);
+        playerController.BlockPlayerMovement();
     }
 
     void GetButtons()
@@ -140,9 +157,10 @@ public class MemoryGameController : MonoBehaviour
         {
             inventory.AddItem(rewardItem);
 
-            gamePanel.SetActive(false);
-        }  
+            playerController.UnblockPlayerMovement();
 
+            gamePanel.SetActive(false);
+        }
     }
 
     void Shuffle(List<Sprite> list)
