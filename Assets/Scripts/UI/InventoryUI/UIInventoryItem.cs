@@ -43,7 +43,7 @@ namespace InventoryUI
 
         public void SetData(Sprite sprite, int quantity)
         {
-            //itemImage.gameObject.SetActive(true);
+            itemImage.gameObject.SetActive(true);
             itemImage.sprite = sprite;
             quantityTxt.text = quantity.ToString();
 

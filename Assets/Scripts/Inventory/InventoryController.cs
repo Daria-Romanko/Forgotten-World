@@ -90,6 +90,7 @@ namespace Inventory2
 
         public void Update()
         {
+            
             if (Input.GetKeyUp(KeyCode.I))
             {
                 if (inventoryUI.isActiveAndEnabled == false)
