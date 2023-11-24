@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PixelCrushers.DialogueSystem;
+
 
 public class MemoryGameController : MonoBehaviour
 {
@@ -160,6 +162,8 @@ public class MemoryGameController : MonoBehaviour
             playerController.UnblockPlayerMovement();
 
             gamePanel.SetActive(false);
+
+            DialogueManager.StartConversation("NPC conversation 2", GameObject.FindGameObjectWithTag("Player").transform);
         }
     }
 
