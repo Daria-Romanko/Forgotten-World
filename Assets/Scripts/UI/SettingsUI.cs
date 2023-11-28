@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using JetBrains.Annotations;
 
-public class NewBehaviourScript : MonoBehaviour
+public class SettingsUI : MonoBehaviour
 {
     public Dropdown resolutionDropdown;
     public Dropdown qualityDropdown;
