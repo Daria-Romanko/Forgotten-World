@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b99c553139026944af01102e903a33c, type: 3}
-  m_Name: "\u041A\u043B\u044E\u0447"
+  m_Name: "\u041E\u0440\u0435\u0445"
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
-  <Name>k__BackingField: "\u041A\u043B\u044E\u0447"
-  <Description>k__BackingField: "\u041F\u0440\u043E\u0441\u0442\u043E \u043A\u043B\u044E\u0447."
-  <ItemImage>k__BackingField: {fileID: 21300000, guid: d1aeeccd66f40084a9b1fd001c83125a, type: 3}
+  <Name>k__BackingField: "\u041E\u0440\u0435\u0445"
+  <Description>k__BackingField: "\u0422\u0435\u0440\u0440\u0438 \u0434\u0430\u043B
+    \u0432\u0430\u043C \u0435\u0433\u043E"
+  <ItemImage>k__BackingField: {fileID: 21300000, guid: c5a8381fe5cea9547bd16f30c2dfa564, type: 3}
