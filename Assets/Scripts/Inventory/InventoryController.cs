@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 
 namespace Inventory2
 {
@@ -90,7 +91,7 @@ namespace Inventory2
 
         public void Update()
         {
-            if (Input.GetKeyUp(KeyCode.I))
+            if (Input.GetKeyUp(KeyCode.I) && DialogueLua.GetVariable("InventoryReceived").asBool)
             {
                 if (inventoryUI.isActiveAndEnabled == false)
                 {
