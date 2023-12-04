@@ -42,7 +42,7 @@ public class SettingsUI : MonoBehaviour
 
     // переключение разрешения экрана
 
-    public void SetResolution(int resolutionIndex)
+    public void ResolutionSet(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
@@ -50,7 +50,7 @@ public class SettingsUI : MonoBehaviour
 
     // переключение качества графики
 
-    public void SetQuality(int qualityIndex)
+    public void QualitySet(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
     }
@@ -59,7 +59,7 @@ public class SettingsUI : MonoBehaviour
 
     public void ExitSettings()
     {
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("Menu");
     }
 
     // сохранение
