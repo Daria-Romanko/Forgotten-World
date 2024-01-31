@@ -10,7 +10,6 @@ public class PlayerTeleporter : MonoBehaviour
     private bool isTeleporting;
     public Image alphaImage;
     public float fadeDuration = 1.5f;
-    //private CinemachineVirtualCamera virtualCamera;
 
     void Update()
     {
@@ -26,8 +25,6 @@ public class PlayerTeleporter : MonoBehaviour
     private IEnumerator Teleport()
     {
         isTeleporting = true;
-
-        //virtualCamera = GetComponent<CinemachineVirtualCamera>();
 
         alphaImage.gameObject.SetActive(true);
 
@@ -45,9 +42,9 @@ public class PlayerTeleporter : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
 
-
         transform.position = currentTeleporter.GetComponent<Teleporter>().GetTransform().position;
-        //virtualCamera.OnTargetObjectWarped(currentTeleporter.GetComponent<Teleporter>().GetTransform(), new Vector3(0,0,-10));
+        currentTeleporter.GetComponent<Teleporter>().camera1.Priority = 0;
+        currentTeleporter.GetComponent<Teleporter>().camera2.Priority = 10;
 
         currentTeleporter = null;
 
