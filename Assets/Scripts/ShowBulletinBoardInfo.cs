@@ -32,14 +32,14 @@ public class ShowBulletinBoardInfo : MonoBehaviour
     {
         Collider2D collider = Physics2D.OverlapCircle(transform.position, 1f);
 
-        if (collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && hint.activeSelf)
+        if (collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
             bulletinBoardPanel.SetActive(true);
-            hint.SetActive(false);
         }
         else if(!collider.CompareTag("Player") && bulletinBoardPanel.activeInHierarchy)
         {
             bulletinBoardPanel.SetActive(false);
         }
+        
     }
 }

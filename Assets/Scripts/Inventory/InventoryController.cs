@@ -91,7 +91,7 @@ namespace Inventory2
 
         public void Update()
         {
-            if (Input.GetKeyUp(KeyCode.I) && DialogueLua.GetVariable("InventoryReceived").isBool)
+            if (Input.GetKeyUp(KeyCode.I) && DialogueLua.GetVariable("InventoryReceived").asBool)
             {
                 if (inventoryUI.isActiveAndEnabled == false)
                 {

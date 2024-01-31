@@ -12,10 +12,13 @@ public class MemoryGameController : MonoBehaviour
 
     private GameObject player;
 
+    [SerializeField]
     public GameObject gamePanel;
 
+    [SerializeField]
     private Sprite backgroundImage;
 
+    [SerializeField]
     public Sprite[] cards;
 
     public List<Sprite> gameCards = new List<Sprite>();

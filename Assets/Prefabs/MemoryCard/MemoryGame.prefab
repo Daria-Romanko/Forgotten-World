@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4643435669855451687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -89,19 +89,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamePanel: {fileID: 4910712873601999684}
-  backgroundImage: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  backgroundImage: {fileID: 21300000, guid: 8a3a91f0e8660154dadf7dc8749b679e, type: 3}
   cards:
-  - {fileID: 21300000, guid: 65b9861428b733743a19963a90ce46f1, type: 3}
-  - {fileID: 21300000, guid: 88ef612279aba6549ad98a79373ba19b, type: 3}
-  - {fileID: 21300000, guid: 16f3768ae4109b0418b6d0c5c9e38c2b, type: 3}
-  - {fileID: 21300000, guid: 2645d145be256a64593f2336ea7e5d2d, type: 3}
-  - {fileID: 21300000, guid: 12ea58fe1286a04498ff0aa29cbc4b24, type: 3}
-  - {fileID: 21300000, guid: 1a13170d0458d6c4aa63edb797913b9f, type: 3}
+  - {fileID: 21300000, guid: c5a8381fe5cea9547bd16f30c2dfa564, type: 3}
+  - {fileID: 21300000, guid: 1e5d399e2fc63564a96bdceaabd4f622, type: 3}
+  - {fileID: 21300000, guid: da084d3632fa4de42a6088deddc81ac7, type: 3}
+  - {fileID: 21300000, guid: a44c4868b994ce64781b9ce67fc3b1f7, type: 3}
+  - {fileID: 21300000, guid: e3a6cfc3fdaf0a3478899658f5e72c6c, type: 3}
+  - {fileID: 21300000, guid: 60a1055f077279042accd5d5025dea8f, type: 3}
+  - {fileID: 21300000, guid: fd64f3b76149fb3439584b0a5f4bfa6d, type: 3}
   gameCards: []
   buttons: []
   rewardItem:
     quantity: 1
-    item: {fileID: 11400000, guid: 38259e049622fd74c9b65a2eac789e6b, type: 2}
+    item: {fileID: 11400000, guid: ac69c3982a3e6864d87ba2b0ef1a24e2, type: 2}
   inventory: {fileID: 11400000, guid: 98529bac300772f449289568b96010ce, type: 2}
 --- !u!1 &5909766987909029332
 GameObject:
@@ -214,15 +215,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: eb7a7a0d076a38842a03b5c043beebeb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
