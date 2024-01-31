@@ -1549,6 +1549,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resolutionDropdown: {fileID: 0}
   qualityDropdown: {fileID: 0}
+--- !u!114 &2004368899 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3657277006191911868, guid: 82db342025859e4459a404bccab0c909, type: 3}
+  m_PrefabInstance: {fileID: 7432205042531348254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004368894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a78e16153ce834595278dace2a0c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7432205042531348254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1565,12 +1576,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7432205041202197297, guid: 82db342025859e4459a404bccab0c909, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2004368899}
+    - target: {fileID: 7432205041202197297, guid: 82db342025859e4459a404bccab0c909, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7432205041202197297, guid: 82db342025859e4459a404bccab0c909, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveSettings
+      objectReference: {fileID: 0}
     - target: {fileID: 7432205041202197299, guid: 82db342025859e4459a404bccab0c909, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7432205041246185316, guid: 82db342025859e4459a404bccab0c909, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2004368894}
+    - target: {fileID: 7432205041246185316, guid: 82db342025859e4459a404bccab0c909, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 7432205041323778465, guid: 82db342025859e4459a404bccab0c909, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
