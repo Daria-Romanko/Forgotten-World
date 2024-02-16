@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CardButton
   - Teleporter
+  - PuzzleRotate
   layers:
   - Default
   - TransparentFX
