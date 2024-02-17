@@ -46,8 +46,6 @@ public class PlayerTeleporter : MonoBehaviour
         currentTeleporter.GetComponent<Teleporter>().camera1.Priority = 0;
         currentTeleporter.GetComponent<Teleporter>().camera2.Priority = 10;
 
-        currentTeleporter = null;
-
         timer = 0f;
 
         while (timer < fadeDuration)
@@ -59,6 +57,8 @@ public class PlayerTeleporter : MonoBehaviour
 
         }
         alphaImage.gameObject.SetActive(false);
+
+        currentTeleporter = null;
 
         isTeleporting = false;
     }

@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Burst.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class ShowBulletinBoardInfo : MonoBehaviour
+public class ShowHint : MonoBehaviour
 {
-    public GameObject bulletinBoardPanel;
-
     public GameObject hint;
+
+    [SerializeField]
+    public GameObject _gameObject;
+
+    [SerializeField]
+    public string hintText;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             hint.SetActive(true);
-            hint.GetComponentInChildren<TextMeshProUGUI>().text = "Осмотреть";
+            hint.GetComponentInChildren<TextMeshProUGUI>().text = hintText;
         }
     }
 
@@ -34,12 +36,12 @@ public class ShowBulletinBoardInfo : MonoBehaviour
 
         if (collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
-            bulletinBoardPanel.SetActive(true);
+            _gameObject.SetActive(true);
         }
-        else if(!collider.CompareTag("Player") && bulletinBoardPanel.activeInHierarchy)
+        else if (!collider.CompareTag("Player") && gameObject.activeInHierarchy)
         {
-            bulletinBoardPanel.SetActive(false);
+            _gameObject.SetActive(false);
         }
-        
+
     }
 }
