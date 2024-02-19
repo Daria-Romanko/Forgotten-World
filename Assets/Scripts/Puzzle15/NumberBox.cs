@@ -21,8 +21,26 @@ public class NumberBox : MonoBehaviour
     {
         x = i;
         y = j;
-        this.gameObject.transform.SetParent(transform.parent);
-        this.gameObject.transform.localPosition = new Vector2(i, j);
+        //this.gameObject.transform.SetParent(transform.parent);
+        //this.gameObject.transform.localPosition = new Vector2(i, j);
+
+        StartCoroutine(Move());
+    }
+
+    IEnumerator Move()
+    {
+        float elapsedTime = 0;
+        float duration = 0.1f;
+        Vector2 start = this.gameObject.transform.localPosition;
+        Vector2 end = new Vector2(x, y);
+
+        while(elapsedTime < duration)
+        {
+            this.gameObject.transform.localPosition = Vector2.Lerp(start, end, elapsedTime/duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        this.gameObject.transform.localPosition = end;
     }
 
     public bool IsEmpty()
