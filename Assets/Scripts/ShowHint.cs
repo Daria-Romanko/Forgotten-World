@@ -11,23 +11,32 @@ public class ShowHint : MonoBehaviour
     public GameObject _gameObject;
 
     [SerializeField]
-    public string hintText;
+    public string text;
+
+    private PlayerController playerController;
+
+    private bool puzzleSolved = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !puzzleSolved)
         {
             hint.SetActive(true);
-            hint.GetComponentInChildren<TextMeshProUGUI>().text = hintText;
+            hint.GetComponentInChildren<TextMeshProUGUI>().text = "Осмотреть";
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || puzzleSolved )
         {
             hint.SetActive(false);
         }
+    }
+
+    private void Start()
+    {
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     private void Update()
@@ -36,12 +45,25 @@ public class ShowHint : MonoBehaviour
 
         if (collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
-            _gameObject.SetActive(true);
+            if (!puzzleSolved)
+            {
+                _gameObject.SetActive(true);
+                playerController.BlockPlayerMovement();
+                hint.SetActive(false);
+            }
         }
-        else if (!collider.CompareTag("Player") && gameObject.activeInHierarchy)
+        if(collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.Q))
         {
             _gameObject.SetActive(false);
-        }
+            playerController.UnblockPlayerMovement();
+        }       
+    }
 
+    public void SetPuzzleSolved()
+    {
+        puzzleSolved = true;
+        hint.SetActive(false);
+        _gameObject.SetActive(false);
+        playerController.UnblockPlayerMovement();
     }
 }

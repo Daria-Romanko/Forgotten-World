@@ -1,6 +1,8 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,12 +12,14 @@ public class PlayerTeleporter : MonoBehaviour
     private bool isTeleporting;
     public Image alphaImage;
     public float fadeDuration = 1.5f;
+    public GameObject hint;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (currentTeleporter != null && !isTeleporting)
         {
-            if (currentTeleporter != null && !isTeleporting)
+            hint.GetComponentInChildren<TextMeshProUGUI>().text = currentTeleporter.GetComponent<Teleporter>().locationName;
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 StartCoroutine(Teleport());
             }
@@ -24,6 +28,8 @@ public class PlayerTeleporter : MonoBehaviour
 
     private IEnumerator Teleport()
     {
+        hint.gameObject.SetActive(false);
+
         isTeleporting = true;
 
         alphaImage.gameObject.SetActive(true);
@@ -78,6 +84,7 @@ public class PlayerTeleporter : MonoBehaviour
     {
         if (collision.CompareTag("Teleporter"))
         {
+            hint.gameObject.SetActive(true);
             currentTeleporter = collision.gameObject;
         }
     }
@@ -86,10 +93,11 @@ public class PlayerTeleporter : MonoBehaviour
     {
         if (collision.CompareTag("Teleporter"))
         {
-            if(collision == currentTeleporter)
+            if (collision == currentTeleporter)
             {
                 currentTeleporter = null;
             }
+            hint.gameObject.SetActive(false);
         }
     }
 

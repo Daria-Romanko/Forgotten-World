@@ -12,36 +12,27 @@ public class CodePanel : MonoBehaviour
 
     bool isSafeOpened = false;
 
+    [SerializeField]
+    GameObject safe;
+
     private void Update()
     {
         if (!isSafeOpened)
-        {
-            if (codeTextValue.Length >= 4)
-            {
-                codeTextValue = "";
-            }
-
+        {           
             codeText.text = codeTextValue;
 
             if (codeTextValue == "0451")
             {
                 isSafeOpened = true;
+                safe.GetComponent<ShowHint>().SetPuzzleSolved();
+            }
+
+            if (codeTextValue.Length >= 4)
+            {
+                codeTextValue = "";
             }
         }
-        else
-        {
-            this.gameObject.SetActive(false);
-            //
-        }
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (!isSafeOpened && Input.GetKeyDown(KeyCode.E))
-    //    {
-    //        this.gameObject.SetActive(true);
-    //    }
-    //}
 
     public void AddDigit(string digit)
     {
