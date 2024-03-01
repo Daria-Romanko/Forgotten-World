@@ -16,11 +16,12 @@ public class PlayerTeleporter : MonoBehaviour
 
     void Update()
     {
-        if (currentTeleporter != null && !isTeleporting)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            hint.GetComponentInChildren<TextMeshProUGUI>().text = currentTeleporter.GetComponent<Teleporter>().locationName;
-            if (Input.GetKeyDown(KeyCode.E))
+            if (currentTeleporter != null && !isTeleporting)
             {
+                hint.SetActive(true);
+                
                 StartCoroutine(Teleport());
             }
         }
@@ -28,7 +29,7 @@ public class PlayerTeleporter : MonoBehaviour
 
     private IEnumerator Teleport()
     {
-        hint.gameObject.SetActive(false);
+        hint.SetActive(false);
 
         isTeleporting = true;
 
@@ -84,7 +85,9 @@ public class PlayerTeleporter : MonoBehaviour
     {
         if (collision.CompareTag("Teleporter"))
         {
-            hint.gameObject.SetActive(true);
+            hint.SetActive(true);
+            string locationName = collision.GetComponent<Teleporter>().locationName;
+            hint.GetComponentInChildren<TextMeshProUGUI>().text = locationName;
             currentTeleporter = collision.gameObject;
         }
     }
@@ -93,11 +96,11 @@ public class PlayerTeleporter : MonoBehaviour
     {
         if (collision.CompareTag("Teleporter"))
         {
-            if (collision == currentTeleporter)
-            {
+            //if (collision == currentTeleporter)
+            //{
                 currentTeleporter = null;
-            }
-            hint.gameObject.SetActive(false);
+            //}
+            hint.SetActive(false);
         }
     }
 

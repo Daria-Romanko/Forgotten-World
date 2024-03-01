@@ -1,3 +1,4 @@
+using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,12 @@ public class RotateManager : MonoBehaviour
 {
     private GameObject[] puzzle;
     public static bool isCorrect;
-
+    [SerializeField]
+    public GameObject picture;
     private void Start()
     {
         puzzle = GameObject.FindGameObjectsWithTag("PuzzleRotate");
+
         isCorrect = false;
     }
 
@@ -29,7 +32,8 @@ public class RotateManager : MonoBehaviour
             if (allTrue)
             {
                 isCorrect = true;
-                Debug.Log("YOU WIN");
+                picture.GetComponent<ShowHint>().SetPuzzleSolved();
+                DialogueLua.SetVariable("RotatePuzzle", true);
             }
         }
         PuzzleRotate.isMouse = false;

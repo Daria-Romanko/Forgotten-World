@@ -1,3 +1,4 @@
+using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,10 @@ public class puzzle : MonoBehaviour
     public NumberBox[,] boxes = new NumberBox[4, 4];
 
     public Sprite[] sprites;
+
+    [SerializeField]
+    GameObject puzzleObject;
+
     void Start()
     {
         Init();
@@ -22,7 +27,8 @@ public class puzzle : MonoBehaviour
     {
         if (IsPuzzleSolved())
         {
-            Debug.Log("Win!");
+            puzzleObject.GetComponent<ShowHint>().SetPuzzleSolved();
+            DialogueLua.SetVariable("Puzzle15", true);
         }
     }
     bool IsPuzzleSolved()

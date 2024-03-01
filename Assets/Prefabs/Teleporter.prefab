@@ -125,3 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dest: {fileID: 0}
+  camera1: {fileID: 0}
+  camera2: {fileID: 0}
+  locationName: 

@@ -15,7 +15,7 @@ public class ShowHint : MonoBehaviour
 
     private PlayerController playerController;
 
-    private bool puzzleSolved = false;
+    private bool puzzleSolved;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -37,6 +37,7 @@ public class ShowHint : MonoBehaviour
     private void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
+        puzzleSolved = false;
     }
 
     private void Update()
@@ -50,11 +51,12 @@ public class ShowHint : MonoBehaviour
                 _gameObject.SetActive(true);
                 playerController.BlockPlayerMovement();
                 hint.SetActive(false);
-            }
+            }      
         }
         if(collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.Q))
         {
             _gameObject.SetActive(false);
+            hint.SetActive(true);
             playerController.UnblockPlayerMovement();
         }       
     }

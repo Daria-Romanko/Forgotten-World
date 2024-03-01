@@ -1,3 +1,4 @@
+using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -25,6 +26,7 @@ public class CodePanel : MonoBehaviour
             {
                 isSafeOpened = true;
                 safe.GetComponent<ShowHint>().SetPuzzleSolved();
+                DialogueLua.SetVariable("SafePuzzle", true);
             }
 
             if (codeTextValue.Length >= 4)
