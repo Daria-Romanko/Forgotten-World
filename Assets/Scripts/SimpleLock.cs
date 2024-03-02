@@ -29,7 +29,8 @@ public class SimpleLock : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        Collider2D collider = Physics2D.OverlapCircle(transform.position, 1f);
+        if (collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
             Interact();
         }

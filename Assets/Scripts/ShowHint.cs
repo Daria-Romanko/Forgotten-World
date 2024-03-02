@@ -50,7 +50,7 @@ public class ShowHint : MonoBehaviour
                 hint.SetActive(false);
             }      
         }
-        if(collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.Q) && _gameObject.activeSelf)
         {
             _gameObject.SetActive(false);
             hint.SetActive(true);
