@@ -10,9 +10,6 @@ public class ShowHint : MonoBehaviour
     [SerializeField]
     public GameObject _gameObject;
 
-    [SerializeField]
-    public string text;
-
     private PlayerController playerController;
 
     private bool puzzleSolved;
