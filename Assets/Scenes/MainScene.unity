@@ -10391,7 +10391,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: New Conversation 2
+  conversation: Conversation with Franki
   conversationConversant: {fileID: 0}
   conversationActor: {fileID: 97165883}
   startConversationEntryID: -1
@@ -11246,6 +11246,14 @@ PrefabInstance:
       propertyPath: safe
       value: 
       objectReference: {fileID: 198423410}
+    - target: {fileID: 7038406907545715306, guid: 585e70d8d8ab5c8458340284a486b54c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.4291992
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038406907545715306, guid: 585e70d8d8ab5c8458340284a486b54c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.024047852
+      objectReference: {fileID: 0}
     - target: {fileID: 7038406908950092880, guid: 585e70d8d8ab5c8458340284a486b54c, type: 3}
       propertyPath: m_Name
       value: CodePanel
