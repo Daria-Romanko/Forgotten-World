@@ -3689,7 +3689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _volumeSlider: {fileID: 3501825841567327200}
   _audioMixer: {fileID: 24100000, guid: 8f015606ec593f24aa430b0b6b6b815b, type: 2}
-  _mixerParam: ' _musicVolume'
+  _mixerParam: 
   _minVolume: -20
 --- !u!1 &8398001993201549224
 GameObject:
