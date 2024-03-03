@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e79d7a4eb30cbe141a55fe46222d32f2
+guid: 4b2dc59177933354c812bb830cc7c734
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: capybara-onsen_0
+      name: picture_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 456
-        width: 220
-        height: 220
+        y: 400
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a819de2fab07d6a4e846888394edf9aa
-      internalID: 1416197527
+      spriteID: 0f12896ab10d8a249b0a490a306d9104
+      internalID: 842867485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-onsen_1
+      name: picture_1
       rect:
         serializedVersion: 2
-        x: 220
-        y: 456
-        width: 220
-        height: 220
+        x: 200
+        y: 400
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2651fb07438282468574772e71d893e
-      internalID: 893768846
+      spriteID: db0a4b9a533d18244b76a3c8133e4b97
+      internalID: -816713511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-onsen_2
+      name: picture_2
       rect:
         serializedVersion: 2
-        x: 440
-        y: 456
-        width: 220
-        height: 220
+        x: 400
+        y: 400
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13e33741c8e93484f90eb742b61aa3ba
-      internalID: -1477729199
+      spriteID: be2b72bfa5415bd4e866045622303716
+      internalID: -1219213039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-onsen_3
+      name: picture_3
       rect:
         serializedVersion: 2
-        x: 660
-        y: 456
-        width: 220
-        height: 220
+        x: 600
+        y: 400
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 892de8f89a4b1e3479cf25c1786f5e72
-      internalID: 518835909
+      spriteID: 1be7ebcbe1e2a8a41941c237a488d5de
+      internalID: -45571756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-onsen_4
+      name: picture_4
       rect:
         serializedVersion: 2
-        x: 880
-        y: 456
-        width: 220
-        height: 220
+        x: 800
+        y: 400
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,125 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5949fe373cf8a7c47be93ce219e74537
-      internalID: -1049347736
+      spriteID: b8e380a98ccf69943bd6df708a63b80d
+      internalID: -1991207904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-onsen_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 236
-        width: 220
-        height: 220
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a143d04b49b272428de700f39a01a1a
-      internalID: -456097458
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: capybara-onsen_6
-      rect:
-        serializedVersion: 2
-        x: 220
-        y: 236
-        width: 220
-        height: 220
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7995347c460c13b418ec5e2929210e6c
-      internalID: 733997192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: capybara-onsen_7
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 236
-        width: 220
-        height: 220
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93e15028336105f469bcb622c7b2a261
-      internalID: -359444652
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: capybara-onsen_8
-      rect:
-        serializedVersion: 2
-        x: 660
-        y: 236
-        width: 220
-        height: 220
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9936677d158d23b499516c7bbd1e634d
-      internalID: -745240414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: capybara-onsen_9
-      rect:
-        serializedVersion: 2
-        x: 880
-        y: 236
-        width: 220
-        height: 220
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a0c50b0d97bda3408521f3713fae2dd
-      internalID: 958141070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: capybara-onsen_10
+      name: picture_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 220
-        height: 220
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8df46a67d8a78f643a9d1c2bb5380e01
-      internalID: 498753009
+      spriteID: 58a2ece9d3ebf8349903ab82dd0408fb
+      internalID: -1447012212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-onsen_11
+      name: picture_6
       rect:
         serializedVersion: 2
-        x: 220
-        y: 16
-        width: 220
-        height: 220
+        x: 200
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b48a21c0598d8a41909b49543ce4e1a
-      internalID: 563003540
+      spriteID: 466655dd000844f4fa173617b13d88cb
+      internalID: 145340724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-onsen_12
+      name: picture_7
       rect:
         serializedVersion: 2
-        x: 440
-        y: 16
-        width: 220
-        height: 220
+        x: 400
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,20 +266,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 021449ef8e0f861448fc3844389ca79c
-      internalID: -192483393
+      spriteID: 821cba3680ef712439493ecd26f9f76a
+      internalID: 1187158933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-onsen_13
+      name: picture_8
       rect:
         serializedVersion: 2
-        x: 660
-        y: 16
-        width: 220
-        height: 220
+        x: 600
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -392,20 +287,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcdcc1a8f8420ed4589ed4ed79a71685
-      internalID: -577182186
+      spriteID: 0f5657db0cabafc4d88ffe687379cf9b
+      internalID: -1835229394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: capybara-onsen_14
+      name: picture_9
       rect:
         serializedVersion: 2
-        x: 880
-        y: 16
-        width: 220
-        height: 220
+        x: 800
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -413,8 +308,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 734cdcdea110ce94eb59e20d9cfb1518
-      internalID: 29727118
+      spriteID: 9946f23edba6fe642bd7263707cc7956
+      internalID: 2025514834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: picture_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d58fc89604397d4419d326046454ea1c
+      internalID: -885920030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: picture_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa5656b26bbbe24f9f7006b33ab0cc3
+      internalID: 1268420376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: picture_12
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a077fc346cd13243b4bbd508022173b
+      internalID: -1674600642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: picture_13
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f545b46ba1276c346b4adb325d856760
+      internalID: -68546062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: picture_14
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aab8a132bc73d042a99ba725c760ede
+      internalID: -1097233728
       vertices: []
       indices: 
       edges: []
@@ -430,21 +430,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      capybara-onsen_14: 29727118
-      capybara-onsen_7: -359444652
-      capybara-onsen_8: -745240414
-      capybara-onsen_13: -577182186
-      capybara-onsen_12: -192483393
-      capybara-onsen_9: 958141070
-      capybara-onsen_6: 733997192
-      capybara-onsen_3: 518835909
-      capybara-onsen_11: 563003540
-      capybara-onsen_0: 1416197527
-      capybara-onsen_4: -1049347736
-      capybara-onsen_2: -1477729199
-      capybara-onsen_5: -456097458
-      capybara-onsen_10: 498753009
-      capybara-onsen_1: 893768846
+      picture_9: 2025514834
+      picture_4: -1991207904
+      picture_6: 145340724
+      picture_8: -1835229394
+      picture_12: -1674600642
+      picture_5: -1447012212
+      picture_10: -885920030
+      picture_0: 842867485
+      picture_14: -1097233728
+      picture_1: -816713511
+      picture_13: -68546062
+      picture_2: -1219213039
+      picture_3: -45571756
+      picture_11: 1268420376
+      picture_7: 1187158933
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
