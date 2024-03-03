@@ -24,28 +24,28 @@ public class AudioMixerSliderExample : MonoBehaviour
     // Update is called once per frame
     public void UpdateMixerVolume(float volumeValue) //обновление громкости
     {
-        SetMixerValume(volumeValue);
+        SetMixerVolume(volumeValue);
     }
 
-    private void SetMixerValume(float volumeValue)
+    private void SetMixerVolume(float volumeValue)
     {
-        float mixerValume;
+        float mixerVolume;
         if (volumeValue == 0) { 
-        mixerValume = DisabledVolume;}
+        mixerVolume = DisabledVolume;}
         else
         {
-            mixerValume = Mathf.Lerp(_minVolume,0,volumeValue);
+            mixerVolume = Mathf.Lerp(_minVolume,0,volumeValue);
         }
-        _audioMixer.SetFloat(_mixerParam, mixerValume);
+        _audioMixer.SetFloat(_mixerParam, mixerVolume);
     }
 
     private float GetMixerValume()
     {
-        _audioMixer.GetFloat(_mixerParam, out float mixerValume);
-        if (mixerValume == DisabledVolume) { return 0; }
+        _audioMixer.GetFloat(_mixerParam, out float mixerVolume);
+        if (mixerVolume == DisabledVolume) { return 0; }
         else
         {
-            return Mathf.Lerp(1, 0, mixerValume / _minVolume);
+            return Mathf.Lerp(1, 0, mixerVolume / _minVolume);
         }
     }
 
