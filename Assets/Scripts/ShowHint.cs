@@ -24,7 +24,7 @@ public class ShowHint : MonoBehaviour
         if (other.CompareTag("Player") && !puzzleSolved && inspected)
         {
             hint.SetActive(true);
-            hint.GetComponentInChildren<TextMeshProUGUI>().text = "Осмотреть";
+            hint.GetComponentInChildren<TextMeshProUGUI>().text = "Осмотреть";            
         }
     }
 
