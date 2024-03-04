@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static Cinemachine.CinemachineFreeLook;
 
 public class ShowHint : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class ShowHint : MonoBehaviour
 
     [SerializeField]
     public GameObject _gameObject;
+
+    [SerializeField]
+    public GameObject player;
 
     private PlayerController playerController;
 
