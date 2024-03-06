@@ -14,9 +14,14 @@ public class ShowHint : MonoBehaviour
 
     private bool puzzleSolved;
 
+    public bool inspected;
+    public bool changeSprite;
+
+    public Sprite newSprite = null;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !puzzleSolved)
+        if (other.CompareTag("Player") && !puzzleSolved && inspected)
         {
             hint.SetActive(true);
             hint.GetComponentInChildren<TextMeshProUGUI>().text = "Осмотреть";
@@ -25,7 +30,7 @@ public class ShowHint : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player") || puzzleSolved )
+        if (other.CompareTag("Player") || puzzleSolved && !inspected)
         {
             hint.SetActive(false);
         }
@@ -43,7 +48,7 @@ public class ShowHint : MonoBehaviour
 
         if (collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
-            if (!puzzleSolved)
+            if (!puzzleSolved | inspected)
             {
                 _gameObject.SetActive(true);
                 playerController.BlockPlayerMovement();
@@ -63,6 +68,25 @@ public class ShowHint : MonoBehaviour
         puzzleSolved = true;
         hint.SetActive(false);
         _gameObject.SetActive(false);
+
+        if (changeSprite)
+        {
+            ChangeSprite();
+        }
+
         playerController.UnblockPlayerMovement();
+    }
+
+    public bool GetPuzzleSolved()
+    {
+        return  puzzleSolved;
+    }
+
+    private void ChangeSprite()
+    {
+        if(newSprite != null)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
+        }
     }
 }
