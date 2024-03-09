@@ -32,7 +32,7 @@ namespace InventoryUI
 
         public void Awake()
         {
-            //Hide();
+            Hide();
             mouseFollower.Toggle(false);
             itemDescription.ResetDescription();
         }
@@ -55,6 +55,7 @@ namespace InventoryUI
             }
         }
 
+        
         public void UpdateData(int itemIndex,
                Sprite itemImage, int itemQuantity)
         {
@@ -157,6 +158,22 @@ namespace InventoryUI
                 item.ResetData();
                 item.Deselect();
             }
+        }
+
+
+
+        public void OnDestroy()
+        {
+            foreach (Transform item in contentPanel)
+            {
+                item.GetComponent<UIInventoryItem>().OnItemClicked -= HandleItemSelection;
+                item.GetComponent<UIInventoryItem>().OnItemBeginDrag -= HandleBeginDrag;
+                item.GetComponent<UIInventoryItem>().OnItemDroppedOn -= HandleSwap;
+                item.GetComponent<UIInventoryItem>().OnItemEndDrag -= HandleEndDrag;
+                item.GetComponent<UIInventoryItem>().OnRightMouseBthClick -= HandleShowItemActions;
+            }
+
+            listOfUIItems.Clear();
         }
     }
 }

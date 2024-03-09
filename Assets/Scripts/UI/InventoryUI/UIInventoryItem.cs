@@ -23,6 +23,7 @@ namespace InventoryUI
 
         private bool empty = true;
 
+
         public void Awake()
         {
             ResetData();

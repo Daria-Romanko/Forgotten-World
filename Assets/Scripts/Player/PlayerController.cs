@@ -11,8 +11,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private bool fasingRight;
 
-    private Animator animator;
+    private bool isPlayerBlocked = false;
 
+    private Animator animator;
 
     private void Start()
     {
@@ -20,28 +21,33 @@ public class PlayerController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
     }
 
+    
     private void FixedUpdate()
     {
-        moveInput = Input.GetAxis("Horizontal");
-        playerRigidbody.velocity = new Vector2(moveInput * speed, playerRigidbody.velocity.y);
-        if (fasingRight == false && moveInput > 0)
+        if (!isPlayerBlocked)
         {
-            Flip();
-        }
-        else if (fasingRight == true && moveInput < 0)
-        {
-            Flip();
-        }
+            moveInput = Input.GetAxis("Horizontal");
+            playerRigidbody.velocity = new Vector2(moveInput * speed, playerRigidbody.velocity.y);
+            if (fasingRight == false && moveInput > 0)
+            {
+                Flip();
+            }
+            else if (fasingRight == true && moveInput < 0)
+            {
+                Flip();
+            }
 
-        if(moveInput == 0)
-        {
-            animator.SetBool("isRunning", false);
-        }
-        else
-        {
-            animator.SetBool("isRunning", true);
+            if (moveInput == 0)
+            {
+                animator.SetBool("isRunning", false);
+            }
+            else
+            {
+                animator.SetBool("isRunning", true);
+            }
         }
     }
+
 
     void Flip()
     {
@@ -49,5 +55,18 @@ public class PlayerController : MonoBehaviour
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
+    }
+
+    public void BlockPlayerMovement()
+    {
+        Debug.Log("Player movement blocked");
+        isPlayerBlocked = true;
+        animator.SetBool("isRunning", false);
+    }
+
+    public void UnblockPlayerMovement()
+    {
+        Debug.Log("Player movement unblocked");
+        isPlayerBlocked = false;
     }
 }
