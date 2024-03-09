@@ -13,10 +13,7 @@ public class FoodMachine : MonoBehaviour
     public InventoryItem item;
     public InventoryItem coin;
 
-
     public InventorySO inventory;
-
-
 
     bool playerInColliderFlag = false;
 
