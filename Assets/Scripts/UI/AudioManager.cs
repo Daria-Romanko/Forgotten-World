@@ -6,7 +6,6 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public AudioMixer _mixer;
-    // Start is called before the first frame update
     void Start()
     {
         if (PlayerPrefs.HasKey("_musicVolume"))

@@ -48,6 +48,22 @@ namespace Inventory2.Model
 
         }
 
+        public bool FindItemByNameAndQuantity(string itemName, int requiredQuantity)
+        {
+            foreach (var inventoryItem in inventoryItems)
+            {
+                if (!inventoryItem.IsEmpty)
+                {
+                    if (inventoryItem.item.Name == itemName && inventoryItem.quantity >= requiredQuantity)
+                    {
+                        return true;
+                    }
+                }         
+            }
+
+            return false;
+        }
+
         //удаляет предмет из инвентаря
         public void RemoveItem(InventoryItem item, int amount)
         {
@@ -64,6 +80,26 @@ namespace Inventory2.Model
                         .ChangeQuantity(reminder);
 
                 InformAboutChange();
+            }
+        }
+
+        public void RemoveItemByName(string itemName, int amount)
+        {
+            InventoryItem itemToRemove = InventoryItem.GetEmptyItem();
+
+            foreach (var inventoryItem in inventoryItems)
+            {
+                if (!inventoryItem.IsEmpty)
+                {
+                    if (inventoryItem.item.Name == itemName && inventoryItem.quantity >= amount)
+                    {
+                        itemToRemove = inventoryItem;
+                    }
+                }
+            }
+            if (!itemToRemove.IsEmpty)
+            {
+                RemoveItem(itemToRemove, amount);
             }
         }
 
