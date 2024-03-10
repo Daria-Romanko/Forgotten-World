@@ -102,7 +102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553964179071128603}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -200, y: -200, z: 0}
+  m_LocalPosition: {x: -200, y: -200, z: -100}
   m_LocalScale: {x: 150, y: 150, z: 100.55867}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -139,6 +139,7 @@ MonoBehaviour:
   - {fileID: 1804115360, guid: 712fe8bf09f64674a8e0ade65966e6ed, type: 3}
   - {fileID: 92694648, guid: 712fe8bf09f64674a8e0ade65966e6ed, type: 3}
   - {fileID: 0}
+  puzzleObject: {fileID: 0}
 --- !u!1 &8854343062123514397
 GameObject:
   m_ObjectHideFlags: 0

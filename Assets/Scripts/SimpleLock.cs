@@ -20,6 +20,7 @@ public class SimpleLock : MonoBehaviour
     public GameObject hint;
 
     private PlayerController playerController;
+    bool playerInColliderFlag = false;
 
     public void Start()
     {
@@ -29,8 +30,7 @@ public class SimpleLock : MonoBehaviour
     }
     private void Update()
     {
-        Collider2D collider = Physics2D.OverlapCircle(transform.position, 1f);
-        if (collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
+        if (playerInColliderFlag && Input.GetKeyDown(KeyCode.E))
         {
             Interact();
         }
@@ -87,6 +87,7 @@ public class SimpleLock : MonoBehaviour
         {
             hint.SetActive(true);
             hint.GetComponentInChildren<TextMeshProUGUI>().text = "Осмотреть";
+            playerInColliderFlag = true;
         }
     }
 
@@ -95,6 +96,7 @@ public class SimpleLock : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             hint.SetActive(false);
+            playerInColliderFlag = false;
         }
     }
 
