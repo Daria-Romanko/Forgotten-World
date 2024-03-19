@@ -21317,7 +21317,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a3911558c7fd2bf44985dc7b8142c671, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cfdcae64ed9616341abd3adea323521c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -22929,7 +22929,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a3911558c7fd2bf44985dc7b8142c671, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55cbf65b1f3249f4f92ef10ba7ec1bbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
