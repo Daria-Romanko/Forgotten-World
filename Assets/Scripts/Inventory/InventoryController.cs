@@ -15,10 +15,15 @@ namespace Inventory2
         private UIInventoryPage inventoryUI;
 
         [SerializeField]
-        private InventorySO inventoryData;
+        public InventorySO inventoryData;
 
         public List<InventoryItem> initialItems = new List<InventoryItem>();
 
+
+        public void RemoveItemByItemSO(string itemName)
+        {
+            inventoryData.RemoveItemByName(itemName, 1);
+        } 
 
         private void Start()
         {
@@ -116,8 +121,6 @@ namespace Inventory2
                     inventoryUI.Hide();
                 }
             }
-        }
-
-
+        }      
     }
 }

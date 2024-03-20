@@ -42,7 +42,7 @@ public class AudioMixerSliderExample : MonoBehaviour
         mixerVolume = DisabledVolume;}
         else
         {
-            mixerVolume = Mathf.Lerp(_minVolume,0,volumeValue);
+            mixerVolume = Mathf.Lerp(_minVolume,1,volumeValue);
         }
         _audioMixer.SetFloat("_musicVolume", mixerVolume);
         PlayerPrefs.SetFloat("_musicVolume",_volumeSlider.value);

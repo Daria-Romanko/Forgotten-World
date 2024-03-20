@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static Cinemachine.CinemachineFreeLook;
 
 public class ShowHint : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class ShowHint : MonoBehaviour
 
     [SerializeField]
     public GameObject _gameObject;
+
+    [SerializeField]
+    public GameObject player;
 
     private PlayerController playerController;
 
@@ -18,13 +22,15 @@ public class ShowHint : MonoBehaviour
     public bool changeSprite;
 
     public Sprite newSprite = null;
+    bool playerInColliderFlag;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !puzzleSolved && inspected)
         {
             hint.SetActive(true);
-            hint.GetComponentInChildren<TextMeshProUGUI>().text = "Осмотреть";
+            hint.GetComponentInChildren<TextMeshProUGUI>().text = "РћСЃРјРѕС‚СЂРµС‚СЊ";
+            playerInColliderFlag = true;
         }
     }
 
@@ -33,6 +39,7 @@ public class ShowHint : MonoBehaviour
         if (other.CompareTag("Player") || puzzleSolved && !inspected)
         {
             hint.SetActive(false);
+            playerInColliderFlag = false;
         }
     }
 
@@ -44,9 +51,9 @@ public class ShowHint : MonoBehaviour
 
     private void Update()
     {
-        Collider2D collider = Physics2D.OverlapCircle(transform.position, 1f);
 
-        if (collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
+
+        if (playerInColliderFlag && Input.GetKeyDown(KeyCode.E))
         {
             if (!puzzleSolved | inspected)
             {

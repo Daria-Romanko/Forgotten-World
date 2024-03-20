@@ -5,6 +5,7 @@ using TMPro;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
+using static Cinemachine.CinemachineFreeLook;
 
 public class PlayerTeleporter : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerTeleporter : MonoBehaviour
     public Image alphaImage;
     public float fadeDuration = 1.5f;
     public GameObject hint;
+    public Canvas canvas;
 
     void Update()
     {
@@ -88,8 +90,20 @@ public class PlayerTeleporter : MonoBehaviour
             hint.SetActive(true);
             string locationName = collision.GetComponent<Teleporter>().locationName;
             hint.GetComponentInChildren<TextMeshProUGUI>().text = locationName;
+
+            LateUpdate();
+
             currentTeleporter = collision.gameObject;
         }
+    }
+
+    private void LateUpdate()
+    {
+        var rt = hint.GetComponent<RectTransform>();
+        var screenPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, this.transform.position);
+        screenPoint.y += 550f;
+        var canvasRT = canvas.GetComponent<RectTransform>();
+        rt.anchoredPosition = screenPoint - canvasRT.sizeDelta / 2f;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
