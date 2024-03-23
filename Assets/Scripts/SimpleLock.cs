@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class SimpleLock : MonoBehaviour
 {
+    public Photo photo;
+
     public bool interactable = true;
     public GameObject lockPanel;
     public TMP_Text[] text;
@@ -28,6 +30,7 @@ public class SimpleLock : MonoBehaviour
         UpdateUI();
         playerController = FindObjectOfType<PlayerController>();
     }
+
     private void Update()
     {
         if (playerInColliderFlag && Input.GetKeyDown(KeyCode.E))
@@ -64,6 +67,7 @@ public class SimpleLock : MonoBehaviour
     {
         interactable = false;
         StopInteract();
+        photo.SetActivePhotoFragment(2);
         Debug.Log("unblocked");
     }
 

@@ -7217,7 +7217,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1064.558
+        x: 1065.7207
         y: 199.69763
         width: 160
         height: 30
@@ -7256,6 +7256,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 814d0c2f-586d-4861-b35d-834810392a40
+        type: 0
+        typeString: 
       conversationID: 10
       isRoot: 0
       isGroup: 0
