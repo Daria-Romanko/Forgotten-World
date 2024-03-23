@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class puzzle : MonoBehaviour
 {
+    public Photo photo;
+
     public NumberBox boxPrefab;
 
     public NumberBox[,] boxes = new NumberBox[4, 4];
@@ -28,9 +30,11 @@ public class puzzle : MonoBehaviour
         if (IsPuzzleSolved())
         {
             puzzleObject.GetComponent<ShowHint>().SetPuzzleSolved();
+            photo.SetActivePhotoFragment(0);            
             DialogueLua.SetVariable("Puzzle15", true);
         }
     }
+
     bool IsPuzzleSolved()
     {
         int index = 1;

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class CodePanel : MonoBehaviour
 {
+    public Photo photo;
+
     [SerializeField]
     TMP_Text codeText;
 
@@ -26,6 +28,7 @@ public class CodePanel : MonoBehaviour
             {
                 isSafeOpened = true;
                 safe.GetComponent<ShowHint>().SetPuzzleSolved();
+                photo.SetActivePhotoFragment(1);
                 DialogueLua.SetVariable("SafePuzzle", true);
             }
 
