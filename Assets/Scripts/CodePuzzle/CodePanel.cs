@@ -30,6 +30,7 @@ public class CodePanel : MonoBehaviour
                 safe.GetComponent<ShowHint>().SetPuzzleSolved();
                 photo.SetActivePhotoFragment(1);
                 DialogueLua.SetVariable("SafePuzzle", true);
+                DialogueManager.Bark("SafeBark", GameObject.FindGameObjectWithTag("Player").transform);
             }
 
             if (codeTextValue.Length >= 4)

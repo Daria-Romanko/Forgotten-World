@@ -32,6 +32,7 @@ public class puzzle : MonoBehaviour
             puzzleObject.GetComponent<ShowHint>().SetPuzzleSolved();
             photo.SetActivePhotoFragment(0);            
             DialogueLua.SetVariable("Puzzle15", true);
+            DialogueManager.Bark("Puzzle15Bark", GameObject.FindGameObjectWithTag("Player").transform);
         }
     }
 

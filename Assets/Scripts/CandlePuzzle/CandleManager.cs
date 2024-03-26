@@ -1,3 +1,4 @@
+using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,16 +6,17 @@ using UnityEngine;
 
 public class CandleManager : MonoBehaviour
 {
+    public Photo photo;
     public List<Candle> candles; // Список свечей
     private List<bool> correctCandles = new List<bool> { false, false, true, true,false,false,false,true,false }; // Правильные индексы зажженных свечей
-
+    public GameObject candle;
     private void Update()
     {
-
         if (CheckSolution()) // Проверяем решение после каждого действия с свечами
         {
-            Debug.Log("Поздравляем, головоломка решена!");
-            // Здесь можно добавить дополнительные действия при успешном решении
+            DialogueManager.Bark("CandleBark", GameObject.FindGameObjectWithTag("Player").transform);
+            photo.SetActivePhotoFragment(4);
+            candle.GetComponent<ShowHint>().SetPuzzleSolved();
         }
 
     }

@@ -56,12 +56,12 @@ public class FoodMachine : MonoBehaviour
                 }
                 else
                 {
-                    DialogueManager.ShowAlert("Недостаточно монет", 1f);
+                    DialogueManager.Bark("FoodMachine2", GameObject.FindGameObjectWithTag("Player").transform);
                 }
             }
             else
             {
-
+                DialogueManager.Bark("FoodMachine1", GameObject.FindGameObjectWithTag("Player").transform);
             }
             
         }
