@@ -70,26 +70,19 @@ public class PlayerTeleporter : MonoBehaviour
         }
         alphaImage.gameObject.SetActive(false);
 
-
-        
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(GameObject.FindGameObjectWithTag("Player").gameObject.transform.position, 0.1f); // Используйте радиус, подходящий для вашей области телепортации
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(GameObject.FindGameObjectWithTag("Player").gameObject.transform.position, 1f);
 
         foreach (Collider2D collider in colliders)
         {
-            if (collider.CompareTag("Teleporter"))
-            {
-                OnTriggerEnter2D(collider);
-                
-                break; // Прерываем цикл после первого триггера для избежания повторного выполнения
-            }
+            OnTriggerEnter2D(collider);
         }
+
 
         isTeleporting = false;
         hint.SetActive(true);
         playerController.UnblockPlayerMovement();
     }
 
-    // Метод для сразу выполнения телепортации
     private void DoTeleport()
     {
         transform.position = currentTeleporter.GetComponent<Teleporter>().GetTransform().position;
@@ -111,7 +104,7 @@ public class PlayerTeleporter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Teleporter") && collision.gameObject != currentTeleporter)
-        {          
+        {
             string locationName = collision.GetComponent<Teleporter>().locationName;
             hint.GetComponentInChildren<TextMeshProUGUI>().text = locationName;
             hint.SetActive(true);
@@ -137,7 +130,7 @@ public class PlayerTeleporter : MonoBehaviour
         {
             //if (collision == currentTeleporter)
             //{
-                currentTeleporter = null;
+            currentTeleporter = null;
             //}
             hint.SetActive(false);
         }

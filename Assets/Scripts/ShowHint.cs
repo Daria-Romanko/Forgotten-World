@@ -80,12 +80,20 @@ public class ShowHint : MonoBehaviour
     public void SetPuzzleSolved()
     {
         puzzleSolved = true;
-        hint.SetActive(false);
-        _gameObject.SetActive(false);
-
+        
         if (changeSprite)
         {
             ChangeSprite();
+        }
+       
+        if (inspected)
+        {
+            hint.SetActive(true);
+        }
+        else
+        {
+            hint.SetActive(false);
+            _gameObject.SetActive(false);
         }
 
         playerController.UnblockPlayerMovement();

@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         {
             moveInput = Input.GetAxis("Horizontal");
             playerRigidbody.velocity = new Vector2(moveInput * speed, playerRigidbody.velocity.y);
+
             if (fasingRight == false && moveInput > 0)
             {
                 Flip();
@@ -45,6 +46,10 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("isRunning", true);
             }
+        }
+        else
+        {
+            playerRigidbody.velocity = new Vector2(0, playerRigidbody.velocity.y);
         }
     }
 
