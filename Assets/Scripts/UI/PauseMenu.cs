@@ -1,3 +1,4 @@
+using PixelCrushers.DialogueSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -36,6 +37,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        DialogueManager.Pause();
         pauseMenuUI.SetActive(true);
         gameIsPaused = true;
 
@@ -47,6 +49,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        DialogueManager.Unpause();
         pauseMenuUI.SetActive(false);
         gameIsPaused = false;
 
