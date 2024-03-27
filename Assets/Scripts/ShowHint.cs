@@ -24,6 +24,8 @@ public class ShowHint : MonoBehaviour
     public Sprite newSprite = null;
     bool playerInColliderFlag;
 
+    public GameObject pauseMenu;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -74,7 +76,7 @@ public class ShowHint : MonoBehaviour
             _gameObject.SetActive(false);
             hint.SetActive(true);
             playerController.UnblockPlayerMovement();
-        }       
+        }        
     }
 
     public void SetPuzzleSolved()

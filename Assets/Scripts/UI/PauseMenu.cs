@@ -9,15 +9,23 @@ public class PauseMenu : MonoBehaviour
     bool gameIsPaused = false;
 
     public GameObject pauseMenuUI;
-    
+    public GameObject[] gameObjects;
+
+    private bool[] puzzleStates;
+
+    void Start()
+    {
+        puzzleStates = new bool[gameObjects.Length];
+        SavePuzzleStates(); 
+    }
+
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!gameIsPaused)
             {
                 Pause();
-
             }
             else
             {
@@ -30,8 +38,11 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         gameIsPaused = true;
-        
+
         Time.timeScale = 0f;
+
+        SavePuzzleStates();
+        HidePuzzles(); 
     }
 
     public void Resume()
@@ -39,6 +50,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         gameIsPaused = false;
 
+        RestorePuzzleStates(); 
         Time.timeScale = 1f;
     }
 
@@ -47,4 +59,27 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    private void SavePuzzleStates()
+    {
+        for (int i = 0; i < gameObjects.Length; i++)
+        {
+            puzzleStates[i] = gameObjects[i].activeSelf; 
+        }
+    }
+
+    private void RestorePuzzleStates()
+    {
+        for (int i = 0; i < gameObjects.Length; i++)
+        {
+            gameObjects[i].SetActive(puzzleStates[i]); 
+        }
+    }
+
+    private void HidePuzzles()
+    {
+        foreach (var obj in gameObjects)
+        {
+            obj.SetActive(false); // Скрываем все игровые объекты при паузе
+        }
+    }
 }

@@ -15,5 +15,7 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: "\u041A\u043D\u0438\u0433\u0430 \u0424\u0440\u0430\u043D\u043A\u0438"
-  <Description>k__BackingField: 
+  <Description>k__BackingField: "\u041F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F
+    \u0445\u0440\u0430\u0431\u0440\u043E\u0433\u043E \u0433\u0435\u0440\u043E\u044F
+    \u0432 \u043C\u0438\u0440\u0435 \u0438\u043B\u043B\u044E\u0437\u0438\u0439."
   <ItemImage>k__BackingField: {fileID: 21300000, guid: f1fc06133437e284789e4a6399c2af0e, type: 3}
