@@ -16,14 +16,20 @@ public class PlayerTeleporter : MonoBehaviour
     public GameObject hint;
     public Canvas canvas;
 
+    private PlayerController playerController;
+
+    private void Start()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (currentTeleporter != null && !isTeleporting)
             {
-                hint.SetActive(true);
-                
+                playerController.BlockPlayerMovement();
                 StartCoroutine(Teleport());
             }
         }
@@ -32,7 +38,6 @@ public class PlayerTeleporter : MonoBehaviour
     private IEnumerator Teleport()
     {
         hint.SetActive(false);
-
         isTeleporting = true;
 
         alphaImage.gameObject.SetActive(true);
@@ -49,11 +54,9 @@ public class PlayerTeleporter : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
 
-        transform.position = currentTeleporter.GetComponent<Teleporter>().GetTransform().position;
-        currentTeleporter.GetComponent<Teleporter>().camera1.Priority = 0;
-        currentTeleporter.GetComponent<Teleporter>().camera2.Priority = 10;
+        DoTeleport();
 
         timer = 0f;
 
@@ -67,9 +70,31 @@ public class PlayerTeleporter : MonoBehaviour
         }
         alphaImage.gameObject.SetActive(false);
 
-        currentTeleporter = null;
+
+        
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(GameObject.FindGameObjectWithTag("Player").gameObject.transform.position, 0.1f); // Используйте радиус, подходящий для вашей области телепортации
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.CompareTag("Teleporter"))
+            {
+                OnTriggerEnter2D(collider);
+                
+                break; // Прерываем цикл после первого триггера для избежания повторного выполнения
+            }
+        }
 
         isTeleporting = false;
+        hint.SetActive(true);
+        playerController.UnblockPlayerMovement();
+    }
+
+    // Метод для сразу выполнения телепортации
+    private void DoTeleport()
+    {
+        transform.position = currentTeleporter.GetComponent<Teleporter>().GetTransform().position;
+        currentTeleporter.GetComponent<Teleporter>().camera1.Priority = 0;
+        currentTeleporter.GetComponent<Teleporter>().camera2.Priority = 10;
     }
 
     private void SetAlpha(float alpha)
@@ -85,11 +110,11 @@ public class PlayerTeleporter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Teleporter"))
-        {
-            hint.SetActive(true);
+        if (collision.CompareTag("Teleporter") && collision.gameObject != currentTeleporter)
+        {          
             string locationName = collision.GetComponent<Teleporter>().locationName;
             hint.GetComponentInChildren<TextMeshProUGUI>().text = locationName;
+            hint.SetActive(true);
 
             LateUpdate();
 

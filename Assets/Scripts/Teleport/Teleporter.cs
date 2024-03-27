@@ -11,6 +11,8 @@ public class Teleporter : MonoBehaviour
     public CinemachineVirtualCamera camera1;
     [SerializeField]
     public CinemachineVirtualCamera camera2;
+    [SerializeField] 
+    public GameObject teleporter;
     [SerializeField]
     public string locationName;
 
