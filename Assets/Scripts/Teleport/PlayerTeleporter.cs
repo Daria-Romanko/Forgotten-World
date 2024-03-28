@@ -12,7 +12,7 @@ public class PlayerTeleporter : MonoBehaviour
     private GameObject currentTeleporter;
     private bool isTeleporting;
     public Image alphaImage;
-    public float fadeDuration = 1.5f;
+    public float fadeDuration = 0.5f;
     public GameObject hint;
     public Canvas canvas;
 
@@ -40,6 +40,8 @@ public class PlayerTeleporter : MonoBehaviour
         hint.SetActive(false);
         isTeleporting = true;
 
+        currentTeleporter.gameObject.GetComponent<Teleporter>().PlayAudioClip();
+
         alphaImage.gameObject.SetActive(true);
 
         SetAlpha(0f);
@@ -52,10 +54,8 @@ public class PlayerTeleporter : MonoBehaviour
             SetAlpha(alpha);
             timer += Time.deltaTime;
             yield return null;
-        }
-
-        yield return new WaitForSeconds(1f);
-
+        }  
+      
         DoTeleport();
 
         timer = 0f;
@@ -84,7 +84,7 @@ public class PlayerTeleporter : MonoBehaviour
     }
 
     private void DoTeleport()
-    {
+    {      
         transform.position = currentTeleporter.GetComponent<Teleporter>().GetTransform().position;
         currentTeleporter.GetComponent<Teleporter>().camera1.Priority = 0;
         currentTeleporter.GetComponent<Teleporter>().camera2.Priority = 10;
