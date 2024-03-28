@@ -12,9 +12,16 @@ public class PlayerTeleporter : MonoBehaviour
     private GameObject currentTeleporter;
     private bool isTeleporting;
     public Image alphaImage;
-    public float fadeDuration = 1.5f;
+    public float fadeDuration = 0.5f;
     public GameObject hint;
     public Canvas canvas;
+
+    private PlayerController playerController;
+
+    private void Start()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+    }
 
     void Update()
     {
@@ -22,8 +29,7 @@ public class PlayerTeleporter : MonoBehaviour
         {
             if (currentTeleporter != null && !isTeleporting)
             {
-                hint.SetActive(true);
-                
+                playerController.BlockPlayerMovement();
                 StartCoroutine(Teleport());
             }
         }
@@ -32,8 +38,9 @@ public class PlayerTeleporter : MonoBehaviour
     private IEnumerator Teleport()
     {
         hint.SetActive(false);
-
         isTeleporting = true;
+
+        currentTeleporter.gameObject.GetComponent<Teleporter>().PlayAudioClip();
 
         alphaImage.gameObject.SetActive(true);
 
@@ -47,13 +54,9 @@ public class PlayerTeleporter : MonoBehaviour
             SetAlpha(alpha);
             timer += Time.deltaTime;
             yield return null;
-        }
-
-        yield return new WaitForSeconds(1.5f);
-
-        transform.position = currentTeleporter.GetComponent<Teleporter>().GetTransform().position;
-        currentTeleporter.GetComponent<Teleporter>().camera1.Priority = 0;
-        currentTeleporter.GetComponent<Teleporter>().camera2.Priority = 10;
+        }  
+      
+        DoTeleport();
 
         timer = 0f;
 
@@ -67,9 +70,24 @@ public class PlayerTeleporter : MonoBehaviour
         }
         alphaImage.gameObject.SetActive(false);
 
-        currentTeleporter = null;
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(GameObject.FindGameObjectWithTag("Player").gameObject.transform.position, 1f);
+
+        foreach (Collider2D collider in colliders)
+        {
+            OnTriggerEnter2D(collider);
+        }
+
 
         isTeleporting = false;
+        hint.SetActive(true);
+        playerController.UnblockPlayerMovement();
+    }
+
+    private void DoTeleport()
+    {      
+        transform.position = currentTeleporter.GetComponent<Teleporter>().GetTransform().position;
+        currentTeleporter.GetComponent<Teleporter>().camera1.Priority = 0;
+        currentTeleporter.GetComponent<Teleporter>().camera2.Priority = 10;
     }
 
     private void SetAlpha(float alpha)
@@ -85,11 +103,11 @@ public class PlayerTeleporter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Teleporter"))
+        if (collision.CompareTag("Teleporter") && collision.gameObject != currentTeleporter)
         {
-            hint.SetActive(true);
             string locationName = collision.GetComponent<Teleporter>().locationName;
             hint.GetComponentInChildren<TextMeshProUGUI>().text = locationName;
+            hint.SetActive(true);
 
             LateUpdate();
 
@@ -112,7 +130,7 @@ public class PlayerTeleporter : MonoBehaviour
         {
             //if (collision == currentTeleporter)
             //{
-                currentTeleporter = null;
+            currentTeleporter = null;
             //}
             hint.SetActive(false);
         }

@@ -46,6 +46,8 @@ public class MemoryGameController : MonoBehaviour
 
     public void ShowGamePanel()
     {
+        DialogueManager.StopConversation();
+
         gamePanel.gameObject.SetActive(true);
 
         GetButtons();
@@ -165,7 +167,7 @@ public class MemoryGameController : MonoBehaviour
             playerController.UnblockPlayerMovement();
 
             gamePanel.SetActive(false);
-
+       
             DialogueManager.StartConversation("NPC conversation 2", GameObject.FindGameObjectWithTag("Player").transform);
         }
     }

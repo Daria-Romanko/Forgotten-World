@@ -24,19 +24,30 @@ public class ShowHint : MonoBehaviour
     public Sprite newSprite = null;
     bool playerInColliderFlag;
 
+    public GameObject pauseMenu;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !puzzleSolved && inspected)
+        if (other.CompareTag("Player"))
         {
-            hint.SetActive(true);
-            hint.GetComponentInChildren<TextMeshProUGUI>().text = "Осмотреть";
-            playerInColliderFlag = true;
+            if (!puzzleSolved || inspected)
+            {
+                hint.SetActive(true);
+                hint.GetComponentInChildren<TextMeshProUGUI>().text = "Осмотреть";
+                playerInColliderFlag = true;
+            }           
+            else
+            {
+                hint.SetActive(false);
+                playerInColliderFlag = false;
+            }
+
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player") || puzzleSolved && !inspected)
+        if (other.CompareTag("Player"))
         {
             hint.SetActive(false);
             playerInColliderFlag = false;
@@ -51,8 +62,6 @@ public class ShowHint : MonoBehaviour
 
     private void Update()
     {
-
-
         if (playerInColliderFlag && Input.GetKeyDown(KeyCode.E))
         {
             if (!puzzleSolved | inspected)
@@ -67,18 +76,26 @@ public class ShowHint : MonoBehaviour
             _gameObject.SetActive(false);
             hint.SetActive(true);
             playerController.UnblockPlayerMovement();
-        }       
+        }        
     }
 
     public void SetPuzzleSolved()
     {
         puzzleSolved = true;
-        hint.SetActive(false);
-        _gameObject.SetActive(false);
-
+        
         if (changeSprite)
         {
             ChangeSprite();
+        }
+       
+        if (inspected)
+        {
+            hint.SetActive(true);
+        }
+        else
+        {
+            hint.SetActive(false);
+            _gameObject.SetActive(false);
         }
 
         playerController.UnblockPlayerMovement();
