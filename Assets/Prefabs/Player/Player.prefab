@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6967392168124404677}
   - component: {fileID: 602359075897733933}
   - component: {fileID: 599460123}
+  - component: {fileID: 1334719173}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -55,8 +56,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06237264, y: 3.060107}
-  m_Size: {x: 3.6367776, y: 5.801264}
+  m_Offset: {x: -0.06237264, y: 3.1131332}
+  m_Size: {x: 3.6367776, y: 5.6952143}
   m_Direction: 0
 --- !u!50 &6967392168124404668
 Rigidbody2D:
@@ -70,7 +71,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 10.339861
+  m_Mass: 10.12146
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -106,15 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 0}
   inventoryData: {fileID: 11400000, guid: 98529bac300772f449289568b96010ce, type: 2}
-  initialItems:
-  - quantity: 1
-    item: {fileID: 11400000, guid: 548d8683b315b4146bc8ed0872fee854, type: 2}
-  - quantity: 0
-    item: {fileID: 0}
-  - quantity: 0
-    item: {fileID: 0}
-  - quantity: 0
-    item: {fileID: 0}
+  initialItems: []
 --- !u!114 &6967392168124404664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,8 +138,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1
-  distanceFrom: 1
-  maxSelectionDistance: 30
+  distanceFrom: 0
+  maxSelectionDistance: 50
   runRaycasts: 0
   raycastAll: 0
   useDefaultGUI: 1
@@ -162,13 +155,12 @@ MonoBehaviour:
     outOfRange: {fileID: 0}
     width: 64
     height: 64
-  useKey: 323
+  useKey: 101
   useButton: Fire1
-  defaultUseMessage: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u043B\u043A\u043C
-    \u0447\u0442\u043E\u0431\u044B \u043D\u0430\u0447\u0430\u0442\u044C \u0434\u0438\u0430\u043B\u043E\u0433"
+  defaultUseMessage: 
   broadcastToChildren: 1
   actorTransform: {fileID: 0}
-  tooFarMessage: "\u0412\u044B \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u0434\u0430\u043B\u0435\u043A\u043E"
+  tooFarMessage: 
   onSelectedUsable:
     m_PersistentCalls:
       m_Calls: []
@@ -307,8 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64578247383140469c45370654a984a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: Player
-  persistentDataName: Player__13406
+  actor: "\u0424\u043B\u0438\u043D"
+  persistentDataName: "\u0424\u043B\u0438\u043D__1510"
   portrait: {fileID: 0}
   spritePortrait: {fileID: 0}
   barkUISettings:
@@ -345,7 +337,8 @@ MonoBehaviour:
   condition:
     luaConditions: []
     questConditions:
-    - questName: ???
+    - questName: "\u0422\u0430\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0435
+        \u043D\u0430\u0447\u0430\u043B\u043E"
       questState: 1
       checkQuestEntry: 0
       entryNumber: 0
@@ -365,6 +358,22 @@ MonoBehaviour:
   minSeconds: 5
   maxSeconds: 5
   target: {fileID: 0}
+--- !u!114 &1334719173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967392168124404658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb751533639e4748b702f92e3e24930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alphaImage: {fileID: 0}
+  fadeDuration: 1.5
+  hint: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!1001 &6967392167823475597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -382,7 +391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8421152482239349145, guid: 9479f14d6a2be2f4f91f01b1304489e1, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0.54754937
+      value: 0.54754925
       objectReference: {fileID: 0}
     - target: {fileID: -8421152482239349145, guid: 9479f14d6a2be2f4f91f01b1304489e1, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -398,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8288980161292924095, guid: 9479f14d6a2be2f4f91f01b1304489e1, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0.25254452
+      value: 0.25254476
       objectReference: {fileID: 0}
     - target: {fileID: -8288980161292924095, guid: 9479f14d6a2be2f4f91f01b1304489e1, type: 3}
       propertyPath: m_Bounds.m_Extent.y
@@ -518,7 +527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4534988937820090970, guid: 9479f14d6a2be2f4f91f01b1304489e1, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0.0032337904
+      value: 0.0032339096
       objectReference: {fileID: 0}
     - target: {fileID: -4534988937820090970, guid: 9479f14d6a2be2f4f91f01b1304489e1, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -542,7 +551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1933416639931032037, guid: 9479f14d6a2be2f4f91f01b1304489e1, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0.00012499094
+      value: 0.00012522936
       objectReference: {fileID: 0}
     - target: {fileID: -1933416639931032037, guid: 9479f14d6a2be2f4f91f01b1304489e1, type: 3}
       propertyPath: m_Bounds.m_Extent.y
@@ -554,7 +563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1481478504205337835, guid: 9479f14d6a2be2f4f91f01b1304489e1, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.006125152
+      value: -0.006125033
       objectReference: {fileID: 0}
     - target: {fileID: -1481478504205337835, guid: 9479f14d6a2be2f4f91f01b1304489e1, type: 3}
       propertyPath: m_Bounds.m_Extent.x

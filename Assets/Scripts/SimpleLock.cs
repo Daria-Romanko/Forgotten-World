@@ -67,8 +67,9 @@ public class SimpleLock : MonoBehaviour
     {
         interactable = false;
         StopInteract();
-        photo.SetActivePhotoFragment(2);
-        DialogueManager.Bark("SimpleLockBark", GameObject.FindGameObjectWithTag("Player").transform);         
+        photo.SetActivePhotoFragment(1);
+        DialogueManager.StartConversation("PhotoFragment2", GameObject.FindGameObjectWithTag("Player").transform);
+
     }
 
     private void CheckPassword()

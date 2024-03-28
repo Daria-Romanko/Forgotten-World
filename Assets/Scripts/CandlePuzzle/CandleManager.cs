@@ -16,6 +16,7 @@ public class CandleManager : MonoBehaviour
         {
             DialogueManager.Bark("CandleBark", GameObject.FindGameObjectWithTag("Player").transform);
             photo.SetActivePhotoFragment(4);
+            DialogueManager.StartConversation("PhotoFragment5", GameObject.FindGameObjectWithTag("Player").transform);
             candle.GetComponent<ShowHint>().SetPuzzleSolved();
         }
 

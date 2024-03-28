@@ -28,9 +28,9 @@ public class CodePanel : MonoBehaviour
             {
                 isSafeOpened = true;
                 safe.GetComponent<ShowHint>().SetPuzzleSolved();
-                photo.SetActivePhotoFragment(1);
+                photo.SetActivePhotoFragment(2);
+                DialogueManager.StartConversation("PhotoFragment3", GameObject.FindGameObjectWithTag("Player").transform);
                 DialogueLua.SetVariable("SafePuzzle", true);
-                DialogueManager.Bark("SafeBark", GameObject.FindGameObjectWithTag("Player").transform);
                 this.gameObject.GetComponent<AddItemInInventory>().AddItem();
 
             }
