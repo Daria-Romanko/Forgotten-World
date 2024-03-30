@@ -19940,6 +19940,13 @@ MonoBehaviour:
   musicTracks:
   - {fileID: 8300000, guid: 80401764638c8d045925cee39b1e360c, type: 3}
   - {fileID: 8300000, guid: 9376b1f9c33553340a4c66137f5cff03, type: 3}
+  - {fileID: 8300000, guid: bcd218a62b85b0e4e9469e24f0fb9394, type: 3}
+  - {fileID: 8300000, guid: 00000854341204244b7fe8c23e388693, type: 3}
+  - {fileID: 8300000, guid: 9b86df5715346d04ea12f39fab2422ae, type: 3}
+  - {fileID: 8300000, guid: 7881465dd2e08464f8cf42ace95a951a, type: 3}
+  - {fileID: 8300000, guid: f2413b476f569a2438e950908617980e, type: 3}
+  - {fileID: 8300000, guid: c5b6e2dad4620ed409c9448f1042bf56, type: 3}
+  - {fileID: 8300000, guid: 12eac0fc5ad8f9d47998586d2a80b2aa, type: 3}
 --- !u!1 &1822049259
 GameObject:
   m_ObjectHideFlags: 0
@@ -23989,6 +23996,14 @@ PrefabInstance:
     - target: {fileID: 911556437315424283, guid: f1d23423779705746ab04e4784ac493c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911556438546351560, guid: f1d23423779705746ab04e4784ac493c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.39135742
+      objectReference: {fileID: 0}
+    - target: {fileID: 911556438546351560, guid: f1d23423779705746ab04e4784ac493c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.32788086
       objectReference: {fileID: 0}
     - target: {fileID: 911556438546351561, guid: f1d23423779705746ab04e4784ac493c, type: 3}
       propertyPath: photo
