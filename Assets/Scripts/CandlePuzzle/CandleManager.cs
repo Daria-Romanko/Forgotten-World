@@ -24,7 +24,7 @@ public class CandleManager : MonoBehaviour
 
     private bool CheckSolution()
     {
-        List<bool> litCandles= new List<bool>();
+        List<bool> litCandles = new List<bool>();
         for (int i = 0; i < candles.Count; i++)
         {
             litCandles.Add(candles[i].IsLit());

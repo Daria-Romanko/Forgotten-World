@@ -13,9 +13,12 @@ public class PauseMenu : MonoBehaviour
     public GameObject[] gameObjects;
 
     private bool[] puzzleStates;
+    PlayerTeleporter playerTeleporter;
+
 
     void Start()
     {
+        playerTeleporter = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerTeleporter>();
         puzzleStates = new bool[gameObjects.Length];
         SavePuzzleStates(); 
     }
@@ -45,6 +48,10 @@ public class PauseMenu : MonoBehaviour
 
         SavePuzzleStates();
         HidePuzzles(); 
+        if(playerTeleporter.isTeleporting)
+        {
+            playerTeleporter.PauseSFX();
+        }
     }
 
     public void Resume()
@@ -55,6 +62,11 @@ public class PauseMenu : MonoBehaviour
 
         RestorePuzzleStates(); 
         Time.timeScale = 1f;
+
+        if (playerTeleporter.isTeleporting)
+        {
+            playerTeleporter.UnPauseSFX();
+        }
     }
 
     public void Quit()
