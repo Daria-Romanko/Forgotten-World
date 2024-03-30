@@ -8,7 +8,7 @@ public class CandleManager : MonoBehaviour
 {
     public Photo photo;
     public List<Candle> candles; // Список свечей
-    private List<bool> correctCandles = new List<bool> { false, false, true, true,false,false,false,true,false }; // Правильные индексы зажженных свечей
+    private List<bool> correctCandles = new List<bool> { true, true, true, false, false,false,false,true}; // Правильные индексы зажженных свечей
     public GameObject candle;
     private void Update()
     {
