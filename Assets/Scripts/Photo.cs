@@ -27,14 +27,14 @@ public class Photo : MonoBehaviour
 
     public void SetActivePhotoFragment(int index)
     {
-
-        DialogueManager.StopAllConversations();
-
         images[index].gameObject.SetActive(true);
+
+        DialogueManager.StopConversation();
 
         count++;
         if (count == 1)
         {
+            DialogueManager.ShowAlert("Чтобы открыть фотографию нажмите P");
             DialogueManager.StartConversation("PhotoFragment1", GameObject.FindGameObjectWithTag("Player").transform);
         }
         else

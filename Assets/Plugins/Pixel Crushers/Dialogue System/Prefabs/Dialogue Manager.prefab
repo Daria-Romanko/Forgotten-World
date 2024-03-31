@@ -185,13 +185,13 @@ MonoBehaviour:
     subtitleSettings:
       showNPCSubtitlesDuringLine: 1
       showNPCSubtitlesWithResponses: 1
-      showPCSubtitlesDuringLine: 0
-      allowPCSubtitleReminders: 0
+      showPCSubtitlesDuringLine: 1
+      allowPCSubtitleReminders: 1
       skipPCSubtitleAfterResponseMenu: 1
-      subtitleCharsPerSecond: 30
-      minSubtitleSeconds: 2
+      subtitleCharsPerSecond: 15
+      minSubtitleSeconds: 4
       continueButton: 0
-      requireContinueOnLastLine: 0
+      requireContinueOnLastLine: 1
       richTextEmphases: 1
       informSequenceStartAndEnd: 0
     cameraSettings:
@@ -206,7 +206,7 @@ MonoBehaviour:
       reportMissingAudioFiles: 0
       disableInternalSequencerCommands: 0
     inputSettings:
-      alwaysForceResponseMenu: 1
+      alwaysForceResponseMenu: 0
       includeInvalidEntries: 0
       responseTimeout: 0
       responseTimeoutAction: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
       - Fire1
       - Fire2
       cancel:
-        key: 27
+        key: 32
         buttonName: 
       cancelConversation:
         key: 27
@@ -306,7 +306,19 @@ MonoBehaviour:
   singleton: 1
   onUseKeyboard:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onUseJoystick:
     m_PersistentCalls:
       m_Calls: []

@@ -2125,6 +2125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleporter(LivingRoom)
       objectReference: {fileID: 0}
+    - target: {fileID: 4677750355290321691, guid: 7f739e20c78be8948990f2251d9c2de1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f739e20c78be8948990f2251d9c2de1, type: 3}
 --- !u!1 &171162436
@@ -3688,7 +3692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296614399}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -298.15094, y: 18.029507, z: -10}
+  m_LocalPosition: {x: -300.16095, y: 18.029507, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4242,7 +4246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343976404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 233.9, y: -0.8, z: -1}
+  m_LocalPosition: {x: 233.7, y: -0.8, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4830,8 +4834,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 4.95, y: 4.89}
+  m_Offset: {x: -0.15909576, y: 0.3068261}
+  m_Size: {x: 4.040909, y: 4.881817}
   m_Direction: 0
 --- !u!114 &404748687
 MonoBehaviour:
@@ -5024,7 +5028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404748685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 156.22, y: -1.36, z: -1}
+  m_LocalPosition: {x: 158.5, y: -1.36, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5497,7 +5501,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 03ad3a88f3e7b384dad893f3671a8c63, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c4c2a399e96ad343afd4f5083e88e13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6057,6 +6061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleporter(LivingRoom)
       objectReference: {fileID: 0}
+    - target: {fileID: 4677750355290321691, guid: 7f739e20c78be8948990f2251d9c2de1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f739e20c78be8948990f2251d9c2de1, type: 3}
 --- !u!114 &486242039 stripped
@@ -6143,7 +6151,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c95bf34813cf9294eaddd36fa582c291, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34ff2a0a7a43832498f05197586e1f2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6388,7 +6396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502995326}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -234.63924, y: 18.029507, z: -10}
+  m_LocalPosition: {x: -236.64925, y: 18.029507, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6512,8 +6520,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: fdea486cebd5018419a0194695ee421f, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: f8b5ad0aa2ae33340a9f6bae4a126445, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6780,7 +6788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.899971, y: -0.21363735, z: -10}
+  m_LocalPosition: {x: -20.909962, y: -0.21382046, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7994,6 +8002,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleporter(LivingRoom)
       objectReference: {fileID: 0}
+    - target: {fileID: 4677750355290321691, guid: 7f739e20c78be8948990f2251d9c2de1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f739e20c78be8948990f2251d9c2de1, type: 3}
 --- !u!1001 &619386171
@@ -8248,7 +8260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657003973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -345.45093, y: -38.496384, z: -10}
+  m_LocalPosition: {x: -347.46094, y: -38.496384, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8337,7 +8349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673909244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -298.15094, y: 18.029507, z: -10}
+  m_LocalPosition: {x: -300.16095, y: 18.029507, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9795,7 +9807,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842813852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -221.35092, y: -37.496384, z: -10}
+  m_LocalPosition: {x: -223.36093, y: -37.496384, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10664,7 +10676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891913576}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -289.05093, y: 0.10361338, z: -10}
+  m_LocalPosition: {x: -291.06094, y: 0.10361338, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11061,7 +11073,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967695642}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -282.95093, y: -37.996384, z: -10}
+  m_LocalPosition: {x: -284.96094, y: -37.996384, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11363,7 +11375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991497382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -289.05093, y: 0.10361338, z: -10}
+  m_LocalPosition: {x: -291.06094, y: 0.10361338, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11841,7 +11853,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045656166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -221.35092, y: -37.496384, z: -10}
+  m_LocalPosition: {x: -223.36093, y: -37.496384, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13004,6 +13016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleporter(LivingRoom)
       objectReference: {fileID: 0}
+    - target: {fileID: 4677750355290321691, guid: 7f739e20c78be8948990f2251d9c2de1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f739e20c78be8948990f2251d9c2de1, type: 3}
 --- !u!1 &1174761194
@@ -13911,7 +13927,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237447633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -210.75093, y: -0.5963866, z: -10}
+  m_LocalPosition: {x: -212.76094, y: -0.5963866, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14274,7 +14290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261876270}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -360.1509, y: 18.029507, z: -10}
+  m_LocalPosition: {x: -362.16092, y: 18.029507, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15676,7 +15692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360316464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -360.1509, y: 18.029507, z: -10}
+  m_LocalPosition: {x: -362.16092, y: 18.029507, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16981,7 +16997,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501556264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -282.95093, y: -37.996384, z: -10}
+  m_LocalPosition: {x: -284.96094, y: -37.996384, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17067,7 +17083,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c51d1e6dc8d1c894cb90387723ce3cd7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1435435b607c374f91d63797d645525, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17534,7 +17550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540748189}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -345.45093, y: -38.496384, z: -10}
+  m_LocalPosition: {x: -347.46094, y: -38.496384, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17971,6 +17987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleporter(LivingRoom)
       objectReference: {fileID: 0}
+    - target: {fileID: 4677750355290321691, guid: 7f739e20c78be8948990f2251d9c2de1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f739e20c78be8948990f2251d9c2de1, type: 3}
 --- !u!1 &1600833928
@@ -17990,7 +18010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1600833929
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19199,7 +19219,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d1808cfca052feb49899922ff6b219be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5e2ab3a77113dff4d869c6fdc69ad1c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19712,7 +19732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757233321}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -234.63924, y: 18.029507, z: -10}
+  m_LocalPosition: {x: -236.64925, y: 18.029507, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21030,7 +21050,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 161b475dc8bced64ab16da3fde3494a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1233a758bce66454ab0de48bc252765b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -21582,7 +21602,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f89b3914e085c264aae01b277694e255, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4c521073b987b14f8f030793aae253f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -24589,6 +24609,10 @@ PrefabInstance:
       propertyPath: candle
       value: 
       objectReference: {fileID: 243147574}
+    - target: {fileID: 911556438546351606, guid: f1d23423779705746ab04e4784ac493c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d39be10acdadecf4da9bae200e7a42c3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1d23423779705746ab04e4784ac493c, type: 3}
 --- !u!1001 &2665827693903064828
@@ -24992,7 +25016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6967392168124404670, guid: aae922284fb6d344a900305b0ac4404e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.9
+      value: -20.91
       objectReference: {fileID: 0}
     - target: {fileID: 6967392168124404670, guid: aae922284fb6d344a900305b0ac4404e, type: 3}
       propertyPath: m_LocalPosition.y
