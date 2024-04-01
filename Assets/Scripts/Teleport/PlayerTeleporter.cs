@@ -10,7 +10,7 @@ using static Cinemachine.CinemachineFreeLook;
 public class PlayerTeleporter : MonoBehaviour
 {
     private GameObject currentTeleporter;
-    private bool isTeleporting;
+    public bool isTeleporting;
     public Image alphaImage;
     public float fadeDuration = 0.5f;
     public GameObject hint;
@@ -88,6 +88,17 @@ public class PlayerTeleporter : MonoBehaviour
         transform.position = currentTeleporter.GetComponent<Teleporter>().GetTransform().position;
         currentTeleporter.GetComponent<Teleporter>().camera1.Priority = 0;
         currentTeleporter.GetComponent<Teleporter>().camera2.Priority = 10;
+    }
+  
+
+    public void PauseSFX()
+    {
+        currentTeleporter.gameObject.GetComponent<Teleporter>().audioSource.Pause();
+    }
+
+    public void UnPauseSFX()
+    {
+        currentTeleporter.gameObject.GetComponent<Teleporter>().audioSource.UnPause();
     }
 
     private void SetAlpha(float alpha)

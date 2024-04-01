@@ -51,6 +51,7 @@ public class InspectObject : MonoBehaviour
 
             DialogueLua.SetVariable("InventoryReceived", true);
             DialogueManager.Bark("CarBark", GameObject.FindGameObjectWithTag("Player").transform);
+            DialogueManager.ShowAlert("Чтобы открыть рюкзак нажмите I", 2f);
         }
 
     }
