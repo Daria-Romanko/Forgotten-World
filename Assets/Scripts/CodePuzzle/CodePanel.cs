@@ -31,7 +31,6 @@ public class CodePanel : MonoBehaviour
                 photo.SetActivePhotoFragment(2);
                 DialogueManager.StartConversation("PhotoFragment3", GameObject.FindGameObjectWithTag("Player").transform);
                 DialogueLua.SetVariable("SafePuzzle", true);
-                this.gameObject.GetComponent<AddItemInInventory>().AddItem();
 
             }
 

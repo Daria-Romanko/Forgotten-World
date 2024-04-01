@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     private bool[] puzzleStates;
     PlayerTeleporter playerTeleporter;
 
+    public GameObject finalPanel;
 
     void Start()
     {
@@ -49,6 +50,22 @@ public class PauseMenu : MonoBehaviour
         SavePuzzleStates();
         HidePuzzles(); 
         if(playerTeleporter.isTeleporting)
+        {
+            playerTeleporter.PauseSFX();
+        }
+    }
+
+    public void ShowFinalPanel()
+    {
+        DialogueManager.Pause();
+        gameIsPaused = true;
+
+        finalPanel.SetActive(true);
+
+        Time.timeScale = 0f;
+        SavePuzzleStates();
+        HidePuzzles();
+        if (playerTeleporter.isTeleporting)
         {
             playerTeleporter.PauseSFX();
         }

@@ -69,6 +69,7 @@ public class SimpleLock : MonoBehaviour
         StopInteract();
         photo.SetActivePhotoFragment(1);
         DialogueManager.StartConversation("PhotoFragment2", GameObject.FindGameObjectWithTag("Player").transform);
+        this.gameObject.GetComponent<AddItemInInventory>().AddItem();
 
     }
 

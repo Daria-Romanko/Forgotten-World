@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class Photo : MonoBehaviour
 {
+    public PauseMenu pauseMenu;
+
     public GameObject photo;
 
     public Image[] images;
@@ -39,12 +41,24 @@ public class Photo : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(true);
+            photo.SetActive(true);
         }
 
         if (index == 3)
         {
             DialogueManager.StartConversation("PhotoFragment4", GameObject.FindGameObjectWithTag("Player").transform);
         }
+
+        if(count == 5)
+        {
+            ShowFinalPanel();
+        }
+    }
+
+    private IEnumerator ShowFinalPanel()
+    {
+        yield return new WaitForSeconds(10);
+
+        pauseMenu.ShowFinalPanel();
     }
 }
