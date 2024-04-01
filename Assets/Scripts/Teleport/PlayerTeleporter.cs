@@ -77,7 +77,6 @@ public class PlayerTeleporter : MonoBehaviour
             OnTriggerEnter2D(collider);
         }
 
-
         isTeleporting = false;
         hint.SetActive(true);
         playerController.UnblockPlayerMovement();
