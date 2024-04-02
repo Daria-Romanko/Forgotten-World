@@ -51,7 +51,7 @@ public class Photo : MonoBehaviour
 
         if(count == 5)
         {
-            ShowFinalPanel();
+           StartCoroutine(ShowFinalPanel());
         }
     }
 

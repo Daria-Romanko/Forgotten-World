@@ -13401,10 +13401,10 @@ RectTransform:
   m_Father: {fileID: 1940404929}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7547292, y: 0.8435556}
-  m_AnchorMax: {x: 0.87060416, y: 0.8934445}
-  m_AnchoredPosition: {x: 1.9000244, y: -0.19995117}
-  m_SizeDelta: {x: -3.0599976, y: -5.899994}
+  m_AnchorMin: {x: 0.7547292, y: 0.74988896}
+  m_AnchorMax: {x: 0.87000006, y: 0.79800004}
+  m_AnchoredPosition: {x: 2.4000244, y: 0}
+  m_SizeDelta: {x: -2.0599976, y: -3.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1185408475
 MonoBehaviour:
@@ -23361,7 +23361,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45.5
+  m_fontSize: 45.6
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -25485,6 +25485,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 599460123, guid: aae922284fb6d344a900305b0ac4404e, type: 3}
+      propertyPath: condition.questConditions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 599460123, guid: aae922284fb6d344a900305b0ac4404e, type: 3}
+      propertyPath: condition.questConditions.Array.data[0].questName
+      value: "\u0422\u0430\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0435
+        \u043D\u0430\u0447\u0430\u043B\u043E"
+      objectReference: {fileID: 0}
+    - target: {fileID: 599460123, guid: aae922284fb6d344a900305b0ac4404e, type: 3}
+      propertyPath: condition.questConditions.Array.data[1].questName
+      value: "\u041F\u043E\u0438\u0441\u043A \u0443\u0442\u0440\u0430\u0447\u0435\u043D\u043D\u043E\u0433\u043E
+        \u043E\u0431\u0440\u0430\u0437\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 599460123, guid: aae922284fb6d344a900305b0ac4404e, type: 3}
+      propertyPath: condition.questConditions.Array.data[0].questState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 599460123, guid: aae922284fb6d344a900305b0ac4404e, type: 3}
+      propertyPath: condition.questConditions.Array.data[1].questState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 599460123, guid: aae922284fb6d344a900305b0ac4404e, type: 3}
+      propertyPath: condition.questConditions.Array.data[0].checkQuestEntry
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1334719173, guid: aae922284fb6d344a900305b0ac4404e, type: 3}
       propertyPath: hint
       value: 
@@ -25787,6 +25813,10 @@ PrefabInstance:
     - target: {fileID: 194080526773275683, guid: 517e1cdfe7fb4af4d9b36e0abe7d4162, type: 3}
       propertyPath: m_Name
       value: PauseMenuUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675365120065461569, guid: 517e1cdfe7fb4af4d9b36e0abe7d4162, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6481898756804674790, guid: 517e1cdfe7fb4af4d9b36e0abe7d4162, type: 3}
       propertyPath: m_AnchoredPosition.x
