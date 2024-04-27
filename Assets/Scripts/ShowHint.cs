@@ -62,21 +62,30 @@ public class ShowHint : MonoBehaviour
 
     private void Update()
     {
-        if (playerInColliderFlag && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && playerInColliderFlag)
         {
-            if (!puzzleSolved | inspected)
+            if (!puzzleSolved | inspected && !_gameObject.activeSelf)
             {
                 _gameObject.SetActive(true);
                 playerController.BlockPlayerMovement();
                 hint.SetActive(false);
-            }      
+            }
+            else if(!puzzleSolved | inspected && _gameObject.activeSelf)
+            {
+                _gameObject.SetActive(false);
+                hint.SetActive(true);
+                playerController.UnblockPlayerMovement();
+            }
+            else
+            {
+                _gameObject.SetActive(false);
+                hint.SetActive(false);
+                playerController.UnblockPlayerMovement();
+            }
+
         }
-        if(Input.GetKeyDown(KeyCode.Q) && _gameObject.activeSelf)
-        {
-            _gameObject.SetActive(false);
-            hint.SetActive(true);
-            playerController.UnblockPlayerMovement();
-        }        
+
+              
     }
 
     public void SetPuzzleSolved()
