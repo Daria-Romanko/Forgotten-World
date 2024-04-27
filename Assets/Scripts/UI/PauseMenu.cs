@@ -22,11 +22,6 @@ public class PauseMenu : MonoBehaviour
         playerTeleporter = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerTeleporter>();
         puzzleStates = new bool[gameObjects.Length];
         SavePuzzleStates();
-
-        //if (DialogueManager.Instance.transform.GetChild(0).GetChild(1).GetChild(0).gameObject != null && DialogueManager.Instance.transform.GetChild(0).GetChild(1).GetChild(0).gameObject.name != "Quest Track Template")
-        //{
-        //    DialogueManager.Instance.transform.GetChild(0).GetChild(1).GetChild(0).gameObject.SetActive(true);
-        //}
     }
 
     void Update()
@@ -95,6 +90,7 @@ public class PauseMenu : MonoBehaviour
     public void Quit()
     {
         DialogueManager.Unpause();
+        DialogueManager.StopAllConversations();
         SceneManager.LoadScene("Menu");
     }
 
@@ -118,7 +114,7 @@ public class PauseMenu : MonoBehaviour
     {
         foreach (var obj in gameObjects)
         {
-            obj.SetActive(false); // Скрываем все игровые объекты при паузе
+            obj.SetActive(false); 
         }
     }
 }
