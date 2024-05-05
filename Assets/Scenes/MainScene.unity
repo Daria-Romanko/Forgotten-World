@@ -13026,7 +13026,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1113537839}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 599460126}
+        m_TargetAssemblyTypeName: Inventory2.InventoryController, Assembly-CSharp
+        m_MethodName: ShowInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1113537839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25672,6 +25684,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2665827692848792353, guid: b4018e65796fa4b409f5b12790fd93be, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2665827692871213511, guid: b4018e65796fa4b409f5b12790fd93be, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -25680,9 +25696,9 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2665827692871213511, guid: b4018e65796fa4b409f5b12790fd93be, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
+    - target: {fileID: 2665827693330858811, guid: b4018e65796fa4b409f5b12790fd93be, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2665827694289814424, guid: b4018e65796fa4b409f5b12790fd93be, type: 3}
       propertyPath: m_Pivot.x
@@ -25772,6 +25788,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory
       objectReference: {fileID: 0}
+    - target: {fileID: 2665827694484794981, guid: b4018e65796fa4b409f5b12790fd93be, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3460248121805746336, guid: b4018e65796fa4b409f5b12790fd93be, type: 3}
       propertyPath: mouseFollower
       value: 
@@ -25780,6 +25800,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 5.000046
       objectReference: {fileID: 0}
+    - target: {fileID: 4630309844679380482, guid: b4018e65796fa4b409f5b12790fd93be, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630309844679380482, guid: b4018e65796fa4b409f5b12790fd93be, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 526
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630309844679380482, guid: b4018e65796fa4b409f5b12790fd93be, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -265
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683439624277371863, guid: b4018e65796fa4b409f5b12790fd93be, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 82c65645fcc89eb45bedaa858693dc62, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4018e65796fa4b409f5b12790fd93be, type: 3}
 --- !u!1001 &4677750355128170474

@@ -100,27 +100,24 @@ namespace Inventory2
             {
                 if (inventoryUI.isActiveAndEnabled == false)
                 {
-                    inventoryUI.Show();
-                    foreach (var item in inventoryData.GetCurrentInventoryState())
-                    {
-                        inventoryUI.UpdateData(item.Key,
-                                item.Value.item.ItemImage,
-                                item.Value.quantity);
-                    }
+                    ShowInventory();
                 }
                 else
                 {
                     inventoryUI.Hide();
                 }
             }
-
-            if (Input.GetKeyUp(KeyCode.Escape))
+        }  
+        
+        public void ShowInventory()
+        {
+            inventoryUI.Show();
+            foreach (var item in inventoryData.GetCurrentInventoryState())
             {
-                if(inventoryUI.isActiveAndEnabled == true)
-                {
-                    inventoryUI.Hide();
-                }
+                inventoryUI.UpdateData(item.Key,
+                        item.Value.item.ItemImage,
+                        item.Value.quantity);
             }
-        }      
+        }
     }
 }
