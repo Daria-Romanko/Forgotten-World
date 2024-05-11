@@ -110,7 +110,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    private void HidePuzzles()
+    public void HidePuzzles()
     {
         foreach (var obj in gameObjects)
         {

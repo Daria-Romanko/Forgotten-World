@@ -68,7 +68,7 @@ public class SimpleLock : MonoBehaviour
         interactable = false;
         StopInteract();
         photo.SetActivePhotoFragment(1);
-        DialogueManager.StartConversation("PhotoFragment2", GameObject.FindGameObjectWithTag("Player").transform);
+        DialogueManager.Bark("PhotoFragment2", GameObject.FindGameObjectWithTag("Player").transform);
         this.gameObject.GetComponent<AddItemInInventory>().AddItem();
 
     }

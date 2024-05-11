@@ -33,6 +33,7 @@ public class RotateManager : MonoBehaviour
             {
                 isCorrect = true;
                 picture.GetComponent<ShowHint>().SetPuzzleSolved();
+                DialogueManager.Bark("Picture", GameObject.FindGameObjectWithTag("Player").transform);
                 DialogueLua.SetVariable("RotatePuzzle", true);
             }
         }

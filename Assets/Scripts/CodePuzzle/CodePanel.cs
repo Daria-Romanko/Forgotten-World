@@ -29,7 +29,7 @@ public class CodePanel : MonoBehaviour
                 isSafeOpened = true;
                 safe.GetComponent<ShowHint>().SetPuzzleSolved();
                 photo.SetActivePhotoFragment(2);
-                DialogueManager.StartConversation("PhotoFragment3", GameObject.FindGameObjectWithTag("Player").transform);
+                DialogueManager.Bark("PhotoFragment3", GameObject.FindGameObjectWithTag("Player").transform);
                 DialogueLua.SetVariable("SafePuzzle", true);
 
             }
