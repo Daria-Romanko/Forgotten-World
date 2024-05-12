@@ -8958,62 +8958,8 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "\u042F \u043D\u0435 \u043F\u043E\u043D\u0438\u043C\u0430\u044E \u043A\u0442\u043E
-          \u0442\u0443\u0442 \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D. "
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      conversationID: 13
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 13
-        originDialogueID: 1
-        destinationConversationID: 13
-        destinationDialogueID: 2
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 32
-        y: 71
-        width: 160
-        height: 30
-    - id: 2
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: "\u041D\u043E \u044D\u0442\u043E\u0442 \u0431\u0430\u043D\u0442 \u043C\u043D\u0435
+          \u0442\u0443\u0442 \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D.
+          \u041D\u043E \u044D\u0442\u043E\u0442 \u0431\u0430\u043D\u0442 \u043C\u043D\u0435
           \u0437\u043D\u0430\u043A\u043E\u043C... \u041A\u0442\u043E \u0436\u0435
           \u044D\u0442\u043E \u043D\u0430 \u0444\u043E\u0442\u043E\u0433\u0440\u0430\u0444\u0438\u0438?"
         type: 0
@@ -9037,8 +8983,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 31
-        y: 120
+        x: 33
+        y: 71
         width: 160
         height: 30
     entryGroups: []

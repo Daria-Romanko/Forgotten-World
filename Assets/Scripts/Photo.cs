@@ -13,6 +13,7 @@ public class Photo : MonoBehaviour
     public GameObject photo;
 
     public Image[] images;
+    public Image finalImage;
 
     public GameObject finalPanel;
     public FinalSlideShow finalSlideShow;
@@ -37,34 +38,42 @@ public class Photo : MonoBehaviour
 
         DialogueManager.StopConversation();
 
+        count++;
+        if (count == 1)
+        {
+            DialogueManager.ShowAlert("Чтобы открыть фотографию нажмите P");
+            DialogueManager.Bark("PhotoFragment1", GameObject.FindGameObjectWithTag("Player").transform);
+        }
+
+        if (index == 3)
+        {
+            DialogueManager.Bark("PhotoFragment4", GameObject.FindGameObjectWithTag("Player").transform);
+        }
+
+        if (count == 5)
+        {
+            foreach (var image in images)
+            {
+                image.gameObject.SetActive(false);
+            }
+
+            finalImage.gameObject.SetActive(true);
+
+            photo.SetActive(true);
+
+            DialogueManager.BarkString("Кажется я знаю кто на фотографии...", GameObject.FindGameObjectWithTag("Player").transform);
+
+            StartCoroutine(PauseAndFinal());
+        }
+    }
+
+    private IEnumerator PauseAndFinal()
+    {
+        yield return new WaitForSeconds(10f);
 
         pauseMenu.HidePuzzles();
         finalPanel.SetActive(true);
         finalSlideShow.PlaySlideShow();
-
-        //count++;
-        //if (count == 1)
-        //{
-        //    DialogueManager.ShowAlert("Чтобы открыть фотографию нажмите P");
-        //    DialogueManager.Bark("PhotoFragment1", GameObject.FindGameObjectWithTag("Player").transform);
-        //}
-        //else
-        //{
-        //    photo.SetActive(true);
-        //}
-
-        //if (index == 3)
-        //{
-        //    DialogueManager.Bark("PhotoFragment4", GameObject.FindGameObjectWithTag("Player").transform);
-        //}
-
-        //if (count == 5)
-        //{
-        //    pauseMenu.HidePuzzles();
-        //    finalPanel.SetActive(true);
-        //    finalSlideShow.PlaySlideShow();
-        //}
     }
-
 
 }

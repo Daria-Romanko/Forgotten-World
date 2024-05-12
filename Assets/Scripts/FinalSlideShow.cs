@@ -12,20 +12,37 @@ public class FinalSlideShow : MonoBehaviour
     public Image image;
     public GameObject background;
     public Sprite[] sprites;
-    public float fadeDuration = 5f;
-    public float displayTime = 20f;
+    public float fadeDuration = 50f;
+    public float displayTime = 150f;
 
     private int currentSprite = 0;
 
     public void PlaySlideShow()
     {
         panel.gameObject.SetActive(true);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().BlockPlayerMovement();
         StartCoroutine(ShowSlides());
     }
 
     private IEnumerator ShowSlides()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(fadeDuration);
+
+        DialogueManager.BarkString("Что-то должно произойти...", GameObject.FindGameObjectWithTag("Player").transform);
+
+        yield return FadeImage(true);
+        yield return FadeImage(false);
+        yield return new WaitForSeconds(fadeDuration);
+
+        DialogueManager.BarkString("Как-то мне нехорошо...", GameObject.FindGameObjectWithTag("Player").transform);
+
+        yield return FadeImage(true);
+        yield return FadeImage(false);
+        yield return new WaitForSeconds(fadeDuration);
+
+        yield return FadeImage(true);
+        yield return FadeImage(false);
+        yield return new WaitForSeconds(fadeDuration);
 
         while (currentSprite < sprites.Length)
         {
@@ -35,9 +52,13 @@ public class FinalSlideShow : MonoBehaviour
 
             image.sprite = sprites[currentSprite];
 
-            if (currentSprite == 1)
+            if (currentSprite == 0)
             {
-                DialogueManager.Bark("FinalBark1", GameObject.FindGameObjectWithTag("Player").transform);
+                DialogueManager.BarkString("Темно... так темно...", GameObject.FindGameObjectWithTag("Player").transform);
+            }
+            if(currentSprite == 1)
+            {
+                DialogueManager.BarkString("Я что-то вижу...", GameObject.FindGameObjectWithTag("Player").transform);
             }
 
             yield return new WaitForSeconds(displayTime);
@@ -46,7 +67,7 @@ public class FinalSlideShow : MonoBehaviour
             {
                 yield return FadeImage(false);
             }
-
+       
             currentSprite++;
         }
 
@@ -65,6 +86,7 @@ public class FinalSlideShow : MonoBehaviour
             Color newColor = image.color;
             newColor.a = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / fadeDuration);
             image.color = newColor;
+
             yield return null;
         }
     }
