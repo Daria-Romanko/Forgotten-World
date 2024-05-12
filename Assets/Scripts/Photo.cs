@@ -3,6 +3,7 @@ using PixelCrushers.DialogueSystem.Wrappers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Photo : MonoBehaviour
@@ -12,6 +13,10 @@ public class Photo : MonoBehaviour
     public GameObject photo;
 
     public Image[] images;
+    public Image finalImage;
+
+    public GameObject finalPanel;
+    public FinalSlideShow finalSlideShow;
 
     public int count = 0;
     void Start()
@@ -37,28 +42,40 @@ public class Photo : MonoBehaviour
         if (count == 1)
         {
             DialogueManager.ShowAlert("Чтобы открыть фотографию нажмите P");
-            DialogueManager.StartConversation("PhotoFragment1", GameObject.FindGameObjectWithTag("Player").transform);
-        }
-        else
-        {
-            photo.SetActive(true);
+            DialogueManager.Bark("PhotoFragment1", GameObject.FindGameObjectWithTag("Player").transform);
         }
 
         if (index == 3)
         {
-            DialogueManager.StartConversation("PhotoFragment4", GameObject.FindGameObjectWithTag("Player").transform);
+            DialogueManager.Bark("PhotoFragment4", GameObject.FindGameObjectWithTag("Player").transform);
         }
 
-        if(count == 5)
+        if (count == 5)
         {
-           StartCoroutine(ShowFinalPanel());
+            foreach (var image in images)
+            {
+                image.gameObject.SetActive(false);
+            }
+
+            finalImage.gameObject.SetActive(true);
+
+            StartCoroutine(PauseAndFinal());
         }
     }
 
-    private IEnumerator ShowFinalPanel()
+    private IEnumerator PauseAndFinal()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15f);
 
-        pauseMenu.ShowFinalPanel();
+        photo.SetActive(true);
+
+        DialogueManager.BarkString("Кажется я знаю кто на фотографии...", GameObject.FindGameObjectWithTag("Player").transform);
+
+        yield return new WaitForSeconds(10f);
+
+        pauseMenu.HidePuzzles();
+        finalPanel.SetActive(true);
+        finalSlideShow.PlaySlideShow();
     }
+
 }

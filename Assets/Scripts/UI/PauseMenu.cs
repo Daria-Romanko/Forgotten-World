@@ -36,7 +36,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Resume();
             }
-        }
+        } 
     }
 
     public void Pause()
@@ -110,7 +110,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    private void HidePuzzles()
+    public void HidePuzzles()
     {
         foreach (var obj in gameObjects)
         {

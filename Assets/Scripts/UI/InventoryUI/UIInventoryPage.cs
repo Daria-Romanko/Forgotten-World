@@ -30,6 +30,8 @@ namespace InventoryUI
 
         public event Action<int, int> OnSwapItems;
 
+        public GameObject button;
+
         public void Awake()
         {
             Hide();
@@ -121,6 +123,7 @@ namespace InventoryUI
         public void Show()
         {
             gameObject.SetActive(true);
+            button.SetActive(true);
             ResetSelection();
         }
 
@@ -141,6 +144,7 @@ namespace InventoryUI
         public void Hide()
         {
             gameObject.SetActive(false);
+            button.SetActive(false);
             ResetDraggetItem();
         }
 
@@ -159,8 +163,6 @@ namespace InventoryUI
                 item.Deselect();
             }
         }
-
-
 
         public void OnDestroy()
         {
