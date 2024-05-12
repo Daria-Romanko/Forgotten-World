@@ -14,12 +14,11 @@ public class CandleManager : MonoBehaviour
     {
         if (CheckSolution()) // ѕровер€ем решение после каждого действи€ с свечами
         {
-            DialogueManager.Bark("CandleBark", GameObject.FindGameObjectWithTag("Player").transform);
             photo.SetActivePhotoFragment(4);
             DialogueManager.Bark("PhotoFragment5", GameObject.FindGameObjectWithTag("Player").transform);
             candle.GetComponent<ShowHint>().SetPuzzleSolved();
         }
-
+        
     }
 
     private bool CheckSolution()

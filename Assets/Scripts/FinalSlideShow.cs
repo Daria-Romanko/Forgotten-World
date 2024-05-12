@@ -12,8 +12,8 @@ public class FinalSlideShow : MonoBehaviour
     public Image image;
     public GameObject background;
     public Sprite[] sprites;
-    public float fadeDuration = 50f;
-    public float displayTime = 150f;
+    public float fadeDuration;
+    public float displayTime;
 
     private int currentSprite = 0;
 

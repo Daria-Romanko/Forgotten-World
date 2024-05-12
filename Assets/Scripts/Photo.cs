@@ -59,16 +59,18 @@ public class Photo : MonoBehaviour
 
             finalImage.gameObject.SetActive(true);
 
-            photo.SetActive(true);
-
-            DialogueManager.BarkString("Кажется я знаю кто на фотографии...", GameObject.FindGameObjectWithTag("Player").transform);
-
             StartCoroutine(PauseAndFinal());
         }
     }
 
     private IEnumerator PauseAndFinal()
     {
+        yield return new WaitForSeconds(15f);
+
+        photo.SetActive(true);
+
+        DialogueManager.BarkString("Кажется я знаю кто на фотографии...", GameObject.FindGameObjectWithTag("Player").transform);
+
         yield return new WaitForSeconds(10f);
 
         pauseMenu.HidePuzzles();
