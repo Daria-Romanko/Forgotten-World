@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour
     bool gameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    public GameObject settingsUI;
+
     public GameObject[] gameObjects;
 
     private bool[] puzzleStates;
@@ -85,6 +87,8 @@ public class PauseMenu : MonoBehaviour
         {
             playerTeleporter.UnPauseSFX();
         }
+
+        settingsUI.SetActive(false);
     }
 
     public void Quit()

@@ -1,6 +1,7 @@
 using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,6 +15,7 @@ public class FinalSlideShow : MonoBehaviour
     public Sprite[] sprites;
     public float fadeDuration;
     public float displayTime;
+    public TMP_Text[] texts;
 
     private int currentSprite = 0;
 
@@ -41,35 +43,63 @@ public class FinalSlideShow : MonoBehaviour
         yield return new WaitForSeconds(fadeDuration);
 
         yield return FadeImage(true);
+        background.gameObject.SetActive(true);
+        image.sprite = sprites[currentSprite];
+        DialogueManager.BarkString("“емно... так темно...", GameObject.FindGameObjectWithTag("Player").transform);
+        yield return new WaitForSeconds(displayTime);
         yield return FadeImage(false);
-        yield return new WaitForSeconds(fadeDuration);
 
-        while (currentSprite < sprites.Length)
+        currentSprite++;
+
+        image.sprite = sprites[currentSprite];
+        yield return FadeImage(true);
+        DialogueManager.BarkString("я что-то вижу...", GameObject.FindGameObjectWithTag("Player").transform);
+        yield return new WaitForSeconds(displayTime);
+        yield return FadeImage(false);
+        
+        currentSprite++;
+
+        DialogueManager.BarkString("...", GameObject.FindGameObjectWithTag("Player").transform);
+
+        yield return new WaitForSeconds(displayTime);
+        yield return MoveImage(false,1f);
+
+        image.sprite = sprites[currentSprite];
+
+        yield return FadeImage(true);
+
+        yield return new WaitForSeconds(displayTime / 2);
+
+        yield return MoveImage(true,fadeDuration*4);
+
+        for(int i = 0; i < 2; i++)
         {
-            yield return FadeImage(true);
-
-            background.gameObject.SetActive(true);
-
-            image.sprite = sprites[currentSprite];
-
-            if (currentSprite == 0)
-            {
-                DialogueManager.BarkString("“емно... так темно...", GameObject.FindGameObjectWithTag("Player").transform);
-            }
-            if(currentSprite == 1)
-            {
-                DialogueManager.BarkString("я что-то вижу...", GameObject.FindGameObjectWithTag("Player").transform);
-            }
-
-            yield return new WaitForSeconds(displayTime);
-
-            if(currentSprite != 5)
-            {
-                yield return FadeImage(false);
-            }
-       
-            currentSprite++;
+            yield return BlinkingText();
         }
+        
+        currentSprite++;
+
+        image.sprite = sprites[currentSprite];
+
+        yield return new WaitForSeconds(displayTime);
+
+        currentSprite++;
+
+        yield return FadeImage(false);
+
+        image.sprite = sprites[currentSprite];
+        yield return new WaitForSeconds(displayTime);
+
+        yield return FadeImage(true);
+
+        currentSprite++;
+
+        image.sprite = sprites[currentSprite];
+        yield return new WaitForSeconds(displayTime);
+
+        DialogueManager.BarkString("Ёто был всего лишь сон...", GameObject.FindGameObjectWithTag("Player").transform);
+
+        yield return new WaitForSeconds(displayTime * 2);
 
         finalPanel.gameObject.SetActive(true);
     }
@@ -89,5 +119,37 @@ public class FinalSlideShow : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    private IEnumerator MoveImage(bool zoomIn, float t)
+    {
+        float elapsedTime = 0f;
+        Vector3 startScale = zoomIn ? new Vector3(2f, 2f, 1f) : new Vector3(1f, 1f, 1f);
+        Vector3 targetScale = zoomIn ? new Vector3(1f, 1f, 1f) : new Vector3(2f, 2f, 1f);
+
+        while (elapsedTime < t) 
+        {
+            elapsedTime += Time.deltaTime;
+            image.transform.localScale = Vector3.Lerp(startScale, targetScale, elapsedTime / (t));
+
+            yield return null;
+        }
+    }
+
+    private IEnumerator BlinkingText()
+    {
+        for(int i = 0; i < texts.Length; i++)
+        {
+            texts[i].gameObject.SetActive(true);
+            yield return new WaitForSeconds(1f);
+        }
+
+        for (int i = 0; i < texts.Length; i++)
+        {
+            texts[i].gameObject.SetActive(false);
+        }
+        yield return new WaitForSeconds(0.5f);
+
+        yield return null;
     }
 }

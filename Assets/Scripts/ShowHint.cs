@@ -30,7 +30,7 @@ public class ShowHint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (!puzzleSolved || inspected)
+            if (!puzzleSolved | inspected)
             {
                 hint.SetActive(true);
                 hint.GetComponentInChildren<TextMeshProUGUI>().text = "Осмотреть";
@@ -106,9 +106,8 @@ public class ShowHint : MonoBehaviour
         {
             hint.SetActive(false);
             _gameObject.SetActive(false);
-        }
-
-        playerController.UnblockPlayerMovement();
+            playerController.UnblockPlayerMovement();
+        }      
     }
 
     public bool GetPuzzleSolved()
