@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public AudioMixer _mixer;
+
     void Start()
     {
         if (PlayerPrefs.HasKey("_musicVolume"))

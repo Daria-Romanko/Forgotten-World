@@ -7,29 +7,25 @@ using System.Runtime.CompilerServices;
 
 public class AudioMixerSliderExample : MonoBehaviour
 {
-
     private const float DisabledVolume = -80;
     [SerializeField] private Slider _volumeSlider;
     [SerializeField] private AudioMixer _audioMixer;
-
     [SerializeField] private float _minVolume;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         if (PlayerPrefs.HasKey("_musicVolume"))
         {
             _volumeSlider.value = PlayerPrefs.GetFloat("_musicVolume");
+            UpdateMixerVolume(PlayerPrefs.GetFloat("_musicVolume"));
         }
         else
         {
             _volumeSlider.value = 1f;
         }
-        _volumeSlider.SetValueWithoutNotify(GetMixerValume());
+        //_volumeSlider.SetValueWithoutNotify(GetMixerValume());
     }
 
-    // Update is called once per frame
     public void UpdateMixerVolume(float volumeValue) //обновление громкости
     {
         SetMixerVolume(volumeValue);
@@ -42,10 +38,12 @@ public class AudioMixerSliderExample : MonoBehaviour
         mixerVolume = DisabledVolume;}
         else
         {
-            mixerVolume = Mathf.Lerp(_minVolume,1,volumeValue);
+            mixerVolume = Mathf.Lerp(_minVolume,0,volumeValue);
         }
         _audioMixer.SetFloat("_musicVolume", mixerVolume);
         PlayerPrefs.SetFloat("_musicVolume",_volumeSlider.value);
+
+        PlayerPrefs.Save();
     }
 
     private float GetMixerValume()
@@ -54,7 +52,7 @@ public class AudioMixerSliderExample : MonoBehaviour
         if (mixerVolume == DisabledVolume) { return 0; }
         else
         {
-            return Mathf.Lerp(1, 0, mixerVolume / _minVolume);
+            return Mathf.Lerp(-80, 0, mixerVolume / _minVolume);
         }
     }
 
