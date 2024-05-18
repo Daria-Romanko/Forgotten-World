@@ -17,8 +17,6 @@ public class PauseMenu : MonoBehaviour
     private bool[] puzzleStates;
     PlayerTeleporter playerTeleporter;
 
-    public GameObject finalPanel;
-
     void Start()
     {
         playerTeleporter = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerTeleporter>();
@@ -57,27 +55,10 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void ShowFinalPanel()
-    {
-        DialogueManager.Pause();
-        gameIsPaused = true;
-
-        finalPanel.SetActive(true);
-
-        Time.timeScale = 0f;
-        SavePuzzleStates();
-        HidePuzzles();
-        if (playerTeleporter.isTeleporting)
-        {
-            playerTeleporter.PauseSFX();
-        }
-    }
-
     public void Resume()
     {
         DialogueManager.Unpause();
         pauseMenuUI.SetActive(false);
-        finalPanel.SetActive(false);
         gameIsPaused = false;
 
         RestorePuzzleStates(); 

@@ -17,11 +17,14 @@ public class FinalSlideShow : MonoBehaviour
     public float displayTime;
     public TMP_Text[] texts;
 
-    private int currentSprite = 0;
+    public MusicController musicController;
+    public AudioClip finalTrack;
 
+    
     public void PlaySlideShow()
     {
         panel.gameObject.SetActive(true);
+        musicController.Stop();
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().BlockPlayerMovement();
         StartCoroutine(ShowSlides());
     }
@@ -44,27 +47,24 @@ public class FinalSlideShow : MonoBehaviour
 
         yield return FadeImage(true);
         background.gameObject.SetActive(true);
-        image.sprite = sprites[currentSprite];
+        image.sprite = sprites[0];
         DialogueManager.BarkString("“емно... так темно...", GameObject.FindGameObjectWithTag("Player").transform);
         yield return new WaitForSeconds(displayTime);
         yield return FadeImage(false);
 
-        currentSprite++;
-
-        image.sprite = sprites[currentSprite];
+        image.sprite = sprites[1];
         yield return FadeImage(true);
         DialogueManager.BarkString("я что-то вижу...", GameObject.FindGameObjectWithTag("Player").transform);
         yield return new WaitForSeconds(displayTime);
         yield return FadeImage(false);
         
-        currentSprite++;
-
         DialogueManager.BarkString("...", GameObject.FindGameObjectWithTag("Player").transform);
 
-        yield return new WaitForSeconds(displayTime);
-        yield return MoveImage(false,1f);
+        yield return MoveImage(false,5f);
 
-        image.sprite = sprites[currentSprite];
+        image.sprite = sprites[2];
+
+        musicController.StartCoroutine(musicController.PlayTrack(finalTrack));
 
         yield return FadeImage(true);
 
@@ -77,24 +77,17 @@ public class FinalSlideShow : MonoBehaviour
             yield return BlinkingText();
         }
         
-        currentSprite++;
-
-        image.sprite = sprites[currentSprite];
+        image.sprite = sprites[3];
 
         yield return new WaitForSeconds(displayTime);
-
-        currentSprite++;
 
         yield return FadeImage(false);
 
-        image.sprite = sprites[currentSprite];
-        yield return new WaitForSeconds(displayTime);
+        image.sprite = sprites[4];
 
         yield return FadeImage(true);
 
-        currentSprite++;
-
-        image.sprite = sprites[currentSprite];
+        image.sprite = sprites[5];
         yield return new WaitForSeconds(displayTime);
 
         DialogueManager.BarkString("Ёто был всего лишь сон...", GameObject.FindGameObjectWithTag("Player").transform);

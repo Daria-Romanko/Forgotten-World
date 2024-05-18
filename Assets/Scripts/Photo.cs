@@ -21,7 +21,7 @@ public class Photo : MonoBehaviour
     public int count = 0;
     void Start()
     {
-        
+ 
     }
 
     void Update()
