@@ -21,7 +21,7 @@ public class Photo : MonoBehaviour
     public int count = 0;
     void Start()
     {
-
+ 
     }
 
     void Update()
@@ -36,13 +36,17 @@ public class Photo : MonoBehaviour
     {
         images[index].gameObject.SetActive(true);
 
-        DialogueManager.StopConversation();
+        DialogueManager.StopAllConversations();
 
         count++;
         if (count == 1)
         {
             DialogueManager.ShowAlert("Чтобы открыть фотографию нажмите P");
             DialogueManager.Bark("PhotoFragment1", GameObject.FindGameObjectWithTag("Player").transform);
+        }
+        else
+        {
+            DialogueManager.ShowAlert("Получен фрагмент фотографии");
         }
 
         if (index == 3)
@@ -52,6 +56,8 @@ public class Photo : MonoBehaviour
 
         if (count == 5)
         {
+            QuestLog.SetQuestState("Поиск утраченного образа", "success");
+
             foreach (var image in images)
             {
                 image.gameObject.SetActive(false);
@@ -65,7 +71,7 @@ public class Photo : MonoBehaviour
 
     private IEnumerator PauseAndFinal()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(10f);
 
         photo.SetActive(true);
 

@@ -47,9 +47,9 @@ public class FoodMachine : MonoBehaviour
         {
             if(!DialogueLua.GetVariable("PhotoFragment").asBool && DialogueLua.GetVariable("FirstDerylConversation").asBool)
             {
-                if (inventory.FindItemByNameAndQuantity("Монета", 3))
+                if (inventory.FindItemByNameAndQuantity("Монета", 4))
                 {
-                    inventory.RemoveItem(coin, 3);
+                    inventory.RemoveItem(coin, 4);
                     inventory.AddItem(item);          
                     DialogueManager.ShowAlert("Получен предмет", 1f);
                     DialogueLua.SetVariable("PhotoFragment", true);

@@ -30,7 +30,7 @@ public class ShowHint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (!puzzleSolved || inspected)
+            if (!puzzleSolved | inspected)
             {
                 hint.SetActive(true);
                 hint.GetComponentInChildren<TextMeshProUGUI>().text = "Осмотреть";
@@ -64,28 +64,29 @@ public class ShowHint : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && playerInColliderFlag)
         {
-            if (!puzzleSolved | inspected && !_gameObject.activeSelf)
+            if (_gameObject.activeSelf == false)
             {
-                _gameObject.SetActive(true);
-                playerController.BlockPlayerMovement();
-                hint.SetActive(false);
-            }
-            else if(!puzzleSolved | inspected && _gameObject.activeSelf)
-            {
-                _gameObject.SetActive(false);
-                hint.SetActive(true);
-                playerController.UnblockPlayerMovement();
+                if(!puzzleSolved | inspected)
+                {
+                    _gameObject.SetActive(true);
+                    playerController.BlockPlayerMovement();
+                    hint.SetActive(false);
+                }        
             }
             else
             {
                 _gameObject.SetActive(false);
-                hint.SetActive(false);
+                if (inspected)
+                {
+                    hint.SetActive(true);
+                }
+                else 
+                { 
+                    hint.SetActive(false); 
+                }
                 playerController.UnblockPlayerMovement();
             }
-
-        }
-
-              
+        }            
     }
 
     public void SetPuzzleSolved()
@@ -105,9 +106,8 @@ public class ShowHint : MonoBehaviour
         {
             hint.SetActive(false);
             _gameObject.SetActive(false);
-        }
-
-        playerController.UnblockPlayerMovement();
+            playerController.UnblockPlayerMovement();
+        }      
     }
 
     public bool GetPuzzleSolved()
