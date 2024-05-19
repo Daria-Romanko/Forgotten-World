@@ -59,7 +59,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  finalPanel: {fileID: 0}
 --- !u!1 &436747263683673169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,15 +1143,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2077938085496814222, guid: 82db342025859e4459a404bccab0c909, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2077938085496814222, guid: 82db342025859e4459a404bccab0c909, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2077938085496814222, guid: 82db342025859e4459a404bccab0c909, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7432205041803104992, guid: 82db342025859e4459a404bccab0c909, type: 3}
       propertyPath: m_Name
@@ -1232,7 +1231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7432205041803104993, guid: 82db342025859e4459a404bccab0c909, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -11
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 7432205041803104993, guid: 82db342025859e4459a404bccab0c909, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1248,11 +1247,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7893175756821261829, guid: 82db342025859e4459a404bccab0c909, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7893175756821261829, guid: 82db342025859e4459a404bccab0c909, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82db342025859e4459a404bccab0c909, type: 3}

@@ -25,7 +25,6 @@ public class FinalSlideShow : MonoBehaviour
     {
         panel.gameObject.SetActive(true);
         musicController.Stop();
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().BlockPlayerMovement();
         StartCoroutine(ShowSlides());
     }
 

@@ -35,12 +35,16 @@ public class SimpleLock : MonoBehaviour
     {
         if (playerInColliderFlag && Input.GetKeyDown(KeyCode.E))
         {
-            Interact();
+            if(lockPanel.activeSelf == false)
+            {
+                Interact();
+            }
+            else
+            {
+                StopInteract();
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Q) && lockPanel.activeSelf)
-        {
-            StopInteract();
-        }
+        
     }
 
     public void ChangeInsertedPassword(int number)
