@@ -21,7 +21,6 @@ public class Photo : MonoBehaviour
     public int count = 0;
     void Start()
     {
- 
     }
 
     void Update()
@@ -71,13 +70,15 @@ public class Photo : MonoBehaviour
 
     private IEnumerator PauseAndFinal()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().BlockPlayerMovement();
 
         photo.SetActive(true);
 
         DialogueManager.BarkString("Кажется я знаю кто на фотографии...", GameObject.FindGameObjectWithTag("Player").transform);
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
 
         pauseMenu.HidePuzzles();
         finalPanel.SetActive(true);
