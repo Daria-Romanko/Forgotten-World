@@ -12,10 +12,11 @@ public class MenuUI: MonoBehaviour
     {
         if (DialogueManager.Instance.transform.GetChild(0).GetChild(1).GetChild(0).gameObject != null && DialogueManager.Instance.transform.GetChild(0).GetChild(1).GetChild(0).gameObject.name != "Quest Track Template")
         {
-            DialogueManager.Instance.transform.GetChild(0).GetChild(1).GetChild(0).gameObject.SetActive(false);
+            DialogueManager.Instance.transform.GetChild(0).GetChild(1).GetChild(0).gameObject.SetActive(false);    
         }
-
         DialogueManager.Instance.ResetDatabase();
+
+        DialogueManager.Instance.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
 
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainScene");

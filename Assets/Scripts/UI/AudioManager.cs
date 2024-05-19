@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("_musicVolume"))
         {
-            _mixer.SetFloat("_musicVolume", Mathf.Lerp(-80, 0, PlayerPrefs.GetFloat("_musicVolume")));
+            _mixer.SetFloat("_musicVolume", Mathf.Log10( PlayerPrefs.GetFloat("_musicVolume")) * 20);
         }
 
     }
